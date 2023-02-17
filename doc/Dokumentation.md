@@ -48,3 +48,8 @@ Der Daemon leitet Daten zwischen der USB Verbindung und den TCP/IP Sockets hin u
 Zusätzlich ist es möglich den PC auf dem der Brick Daemon läuft von dem PC auf dem der Benutzercode läuft zu trennen. Dadurch ist das Steuern über ein Smartphone oder auch über das Internet möglich.
 
 ![](Pasted%20image%2020230217110610.png)
+
+![](res/Pasted%20image%2020230217110743.png)
+
+![](doc/res/Pasted%20image%2020230217110758.png)
+
