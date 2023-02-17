@@ -46,10 +46,35 @@ Der Brick Daemon ist ein Daemon (bzw. Service für Windows) der als eine Brücke
 Der Daemon leitet Daten zwischen der USB Verbindung und den TCP/IP Sockets hin und her. Bei der Benutzung der API Bindings wird eine TCP/IP Verbindung zum Brick Daemon hergestellt. Dieses Konzept erlaubt es Bindings für nahezu jede Programmiersprache ohne Abhängigkeiten zu erstellen. Dadurch ist es möglich Bricks und Bricklets über eingebettete Geräte wie Smartphones zu programmieren, die nur spezifische Programmiersprachen unterstützten.
 
 Zusätzlich ist es möglich den PC auf dem der Brick Daemon läuft von dem PC auf dem der Benutzercode läuft zu trennen. Dadurch ist das Steuern über ein Smartphone oder auch über das Internet möglich.
-1
-![](Pasted%20image%2020230217110610.png)
-2
-![](res/Pasted%20image%2020230217110743.png)
-3
-![](doc/res/Pasted%20image%2020230217110758.png)
 
+# Brick Daemon Installation auf Linux
+
+**Voraussetzungen**: libusb 1.0.6 oder neuer
+
+Der [Brick Daemon](https://www.tinkerforge.com/de/doc/Software/Brickd.html#brickd) kann auf einer Debian basierten Distribution (Ubuntu, Mint, etc.) aus einer `.deb` Datei installiert werden. Für Arch Linux steht im AUR das Paket [brickd](https://aur.archlinux.org/packages/brickd/) zur Verfügung. Auf anderen Distributionen kann der Brick Daemon aus dem Quelltext installiert werden.
+
+## Debian Paket
+
+Das Brick Daemon Debian Paket steht im [APT Repository](https://download.tinkerforge.com/apt/) bereit, kann aber auch händisch installiert werden.
+
+### APT Repository
+
+Zuerst entsprechend der [Anleitung](https://www.tinkerforge.com/de/doc/Software/APT_Repository.html#apt-repository) das APT Repository hinzufügen. Dann das Brick Daemon Paket installieren:
+
+sudo apt install brickd
+
+Der Brick Daemon wird nach der Installation und beim Hochfahren des Systems automatisch gestartet.
+
+### Händische Installation
+
+Als erstes muss das passende Brick Daemon `.deb` von der [Download-Seite](https://www.tinkerforge.com/de/doc/Downloads.html#downloads-tools) heruntergeladen werden. Nach einem Rechtsklick auf die Datei kann "Open with GDebi Package Installer" ausgewählt werden:
+
+![](res/Pasted%20image%2020230217111112.png)
+
+Klick auf "Install Package":
+
+![](res/Pasted%20image%2020230217111134.png)
+
+Fertig:
+
+![](res/Pasted%20image%2020230217111159.png)
