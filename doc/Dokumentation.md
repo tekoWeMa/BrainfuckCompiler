@@ -46,10 +46,10 @@ Der Brick Daemon ist ein Daemon (bzw. Service für Windows) der als eine Brücke
 Der Daemon leitet Daten zwischen der USB Verbindung und den TCP/IP Sockets hin und her. Bei der Benutzung der API Bindings wird eine TCP/IP Verbindung zum Brick Daemon hergestellt. Dieses Konzept erlaubt es Bindings für nahezu jede Programmiersprache ohne Abhängigkeiten zu erstellen. Dadurch ist es möglich Bricks und Bricklets über eingebettete Geräte wie Smartphones zu programmieren, die nur spezifische Programmiersprachen unterstützten.
 
 Zusätzlich ist es möglich den PC auf dem der Brick Daemon läuft von dem PC auf dem der Benutzercode läuft zu trennen. Dadurch ist das Steuern über ein Smartphone oder auch über das Internet möglich.
-
+1
 ![](Pasted%20image%2020230217110610.png)
-
+2
 ![](res/Pasted%20image%2020230217110743.png)
-
+3
 ![](doc/res/Pasted%20image%2020230217110758.png)
 
