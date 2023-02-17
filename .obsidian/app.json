@@ -1,3 +1,4 @@
 {
-  "attachmentFolderPath": "doc/res"
+  "attachmentFolderPath": "doc/res",
+  "useMarkdownLinks": true
 }
