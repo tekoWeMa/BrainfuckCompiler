@@ -4,59 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ab3c89d859f26726",
+        "id": "bc58928a6f59adba",
         "type": "tabs",
         "children": [
           {
-            "id": "85b392ea2d6c4c2d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Abschlussbericht.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "425d027664a8262c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Schlussteil.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fe81954beebd8327",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Management Summary.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "bbb33e692710bc71",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Abschlussbericht.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c3c3849abd429e7f",
+            "id": "c3ae3f1421181554",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -67,11 +19,10 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       },
       {
-        "id": "bc58928a6f59adba",
+        "id": "abcee34a677b429e",
         "type": "tabs",
         "children": [
           {
@@ -80,7 +31,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projektauftrag.md",
+                "file": "doc/Projektplan.md",
                 "mode": "source",
                 "source": false
               }
@@ -152,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Abschlussbericht.md",
+                "file": "doc/Was_Ist_Brainfuck.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -169,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Abschlussbericht.md",
+                "file": "doc/Was_Ist_Brainfuck.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -192,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Abschlussbericht.md"
+                "file": "doc/Was_Ist_Brainfuck.md"
               }
             }
           }
@@ -213,28 +164,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bbb33e692710bc71",
+  "active": "c3ae3f1421181554",
   "lastOpenFiles": [
-    "Management Summary.md",
+    "Dokumentation.md",
+    "doc/Was_Ist_Brainfuck.md",
+    "doc/Projektstatusbericht.md",
+    "doc/Projektplan.md",
+    "doc/Präsentation.md",
+    "doc/Pflichtenheft.md",
     "Schlussteil.md",
     "Abschlussbericht.md",
+    "doc/TechnischeDokumentation.md",
     "Projektauftrag.md",
+    "Risikoanalyse.md",
+    "doc/Wieso.md",
+    "Management Summary.md",
     "NotizenMario.md",
     "Interpreter und Compiler.md",
     "RustSetup.md",
-    "doc/Was_Ist_Brainfuck.md",
     "doc/res/2023-03-11 16_46_56-Window.png",
     "doc/res/Pasted image 20230311164736.png",
     "doc/res/Pasted image 20230311164458.png",
     "doc/res/Pasted image 20230311164335.png",
-    "Risikoanalyse.md",
-    "doc/Dokumentation.md",
     "doc/res/Pasted image 20230311163947.png",
-    "doc/Pflichtenheft.md",
-    "doc/Präsentation.md",
-    "doc/Projektplan.md",
-    "doc/Projektstatusbericht.md",
-    "doc/Wieso.md",
     "Projekt",
     "doc/res/Pasted image 20230217111134.png",
     "doc/res/Pasted image 20230217111112.png",
