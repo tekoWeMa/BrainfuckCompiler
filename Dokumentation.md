@@ -1,14 +1,26 @@
-# Titelblatt
+# Teko schweizerische Fachhochschule
+## L-TIN-21-T-a
+
+### Brainfuck Compiler
+
+TODO: Bild einfügen
+
+Projektleiter: Mario Weilenmann, Marvin Huber
+
+Dozent: Iwan Müeller
+
+Datum: 18.03.2023
+
 
 # Management Summary
 
-Das Projektziel besteht darin, eine begleitende Projektdokumentation zu erstellen, die Implementierung der Brainfuck Programmiersprache durchzuführen und eine Visualisierung auf einem Embedded Hardware Tinkerforge (OLED Display) zu realisieren. Ein Teil des Projekts beinhaltet auch die Vertiefung der Kenntnisse in der Programmiersprache Java, indem ein Brainfuck-Compiler von Grund auf gebaut wird.
+Das Projektziel besteht darin, eine begleitende Projektdokumentation zu erstellen, die Implementierung der Brainfuck Programmiersprache durchzuführen und eine Visualisierung auf einem Embedded Hardware Tinkerforge (mit OLED Display) zu realisieren. Ein Teil des Projekts beinhaltet auch die Vertiefung der Kenntnisse in der Programmiersprache Java, indem ein Brainfuck-Compiler von Grund auf gebaut wird.
 
 Das Projektteam setzt sich aus Mario Weilenmann und Marvin Huber zusammen. Mario wird sich auf die Entwicklung des Brainfuck-Compilers konzentrieren und dabei den Unterschied zwischen Compiler und Interpreter verstehen. Marvin wird sich auf den Aufbau unterschiedlicher Runtime-Umgebungen konzentrieren.
 
 Der Kernaspekt des Projekts besteht darin, dass es den Aufbau der Programmierkenntnisse des Teams fördert. Durch die Zusammenarbeit und das gegenseitige Coaching bei der Entwicklung des Brainfuck-Compilers werden wir unser Verständnis für die Programmiersprache Java, die Brainfuck-Programmierung und die systematische Erstellung von Code vertiefen.
 
-Das Projekt birgt auch Risiken, wie technische Schwierigkeiten, zeitliche Einschränkungen, mangelnde Zusammenarbeit, finanzielle Einschränkungen und fehlende Erfahrung. Um diese Risiken zu minimieren, werden verschiedene Strategien eingesetzt, wie gründliche Vorbereitung und Forschung, realistische Zeitpläne, effektive Kommunikation und regelmäßige Treffen sowie Schulung und Weiterbildung.
+Das Projekt birgt auch Risiken, wie technische Schwierigkeiten, zeitliche Einschränkungen, mangelnde Zusammenarbeit, finanzielle Einschränkungen und fehlende Erfahrung. All diese Risiken könnten auftreten. Um diese Risiken zu minimieren, werden verschiedene Strategien eingesetzt, wie gründliche Vorbereitung und Forschung, realistische Zeitpläne, effektive Kommunikation und regelmässige Treffen sowie Schulung und Weiterbildung.
 
 Das Projekt wurde erfolgreich abgeschlossen und wir sind mit dem Ergebnis zufrieden. Die Implementierung der Brainfuck-Programmiersprache und die Visualisierung auf dem Tinkerforge wurden erfolgreich umgesetzt und erfüllten unsere Erwartungen.
 
@@ -16,7 +28,9 @@ Insgesamt haben wir wertvolle Erfahrungen gesammelt und unsere Programmierkenntn
 
 # Inhaltsverzeichnis
 
-- [Titelblatt](#titelblatt)
+- [Teko schweizerische Fachhochschule](#teko-schweizerische-fachhochschule)
+  - [L-TIN-21-T-a](#l-tin-21-t-a)
+    - [Brainfuck Compiler](#brainfuck-compiler)
 - [Management Summary](#management-summary)
 - [Inhaltsverzeichnis](#inhaltsverzeichnis)
 - [Vorwort](#vorwort)
@@ -76,10 +90,11 @@ Insgesamt haben wir wertvolle Erfahrungen gesammelt und unsere Programmierkenntn
 - [Schlussteil](#schlussteil)
   - [Ausblick](#ausblick)
   - [Schlusswort](#schlusswort)
+- [Anhang](#anhang)
 
 # Vorwort
 
-Wieso wir das Thema gewählt haben, einen Brainfuck-Compiler zu schreiben, ist für uns eine faszinierende Herausforderung. Brainfuck ist eine sehr einfache, aber auch sehr abstrakte Programmiersprache, die nur aus acht Befehlen besteht und aufgrund ihrer minimalistischen Natur sehr schwierig zu lesen und zu schreiben ist.
+Wir haben uns für das Thema entschieden, einen Brainfuck-Compiler zu schreiben, da es für uns eine faszinierende Herausforderung darstellt. Brainfuck ist eine extrem simple, aber auch sehr abstrakte Programmiersprache, die lediglich aus acht Befehlen besteht. Aufgrund ihrer minimalistischen Natur ist es sehr schwierig, Brainfuck-Code zu lesen und zu schreiben.
 
 Ein Brainfuck-Compiler ist ein Programm, das geschrieben wurde, um Brainfuck-Code in eine ausführbare Form zu übersetzen, die von einer Maschine verstanden werden kann. Ein Brainfuck-Compiler zu schreiben ist für uns aus folgenden Gründen interessant:
 
@@ -101,11 +116,11 @@ Doch nicht nur das Erlernen von Java ist ein Ziel der Projektarbeit. Vielmehr m�
 
 Um dieses Ziel zu erreichen, haben wir uns dazu entschieden, simplen Programmcode der Programmiersprache Brainfuck zu schreiben und zu kompilieren. Brainfuck ist eine Turing-vollständige Programmiersprache, die nur aus acht Befehlen besteht und daher als einfach zu erlernen gilt. Doch obwohl Brainfuck eine einfache Sprache ist, ist sie aufgrund ihrer geringen Abstraktionsebene und der beschränkten Anzahl von Befehlen eine Herausforderung für jeden Compiler.
 
-Daher ist die Projektarbeit ein wichtiger Schritt, um die Kenntnisse von uns in Java zu erweitern und das Verständnis für Compiler zu vertiefen. Es erfordert Engagement, Ausdauer und eine gute Planung, um das Ziel zu erreichen. Aber das Wissen und die Fähigkeiten, die während der Projektarbeit erworben werden, sind von unschätzbarem Wert für zukünftige Projekte und Karrieremöglichkeiten in der Softwareentwicklung.
+Ddas Wissen und die Fähigkeiten, die während der Projektarbeit erworben werden, sind von unschätzbarem Wert für zukünftige Projekte und Karrieremöglichkeiten in der Softwareentwicklung und hat grosses potential in der Richtung Java.
 
 ## Projektauftrag
 
-Projektauftrag: Erstellung einer Projektdokumentation, Implementierung von Brainfuck Programmiersprache und Visualisierung an Embedded Hardware Tinkerforge (OLED Display)
+Projektauftrag: Erstellung einer Projektdokumentation, Implementierung von Brainfuck Programmiersprache und Visualisierung an Embedded Hardware Tinkerforge.
 
 ### Zielsetzung
 
@@ -113,23 +128,23 @@ Dieses Projekt zielt darauf ab, eine begleitende Projektdokumentation zu erstell
 
 #### Ziele im Detail
 
-1. Erstellung einer begleitenden Projektdokumentation: Es wird eine detaillierte Projektdokumentation erstellt, die den Entwicklungsprozess, die Implementierung und die Ergebnisse des Projekts beschreibt. Die Dokumentation umfasst auch Anweisungen und Anleitungen für die Implementierung des Brainfuck Compilers und die Visualisierung der Programmiersprache auf der Embedded Hardware Tinkerforge (OLED Display).
+1. Erstellung einer begleitenden Projektdokumentation: Es wird eine detaillierte Projektdokumentation erstellt, die den Entwicklungsprozess, die Implementierung und die Ergebnisse des Projekts beschreibt. Die Dokumentation umfasst auch Anweisungen und Anleitungen für die Implementierung des Brainfuck Compilers und die Visualisierung der Programmiersprache auf der Embedded Hardware Tinkerforge.
 
 2. Implementierung von Brainfuck Programmiersprache: Ein wesentliches Ziel des Projekts besteht darin, die Programmiersprache Brainfuck zu implementieren. Dies beinhaltet die Entwicklung eines Brainfuck Compilers von Grund auf, um sicherzustellen, dass das Verständnis für Java und Brainfuck vertieft wird. Wir werden auch sicherstellen, dass wir die Unterschiede zwischen Compiler und Interpreter verstehen und in der Lage sind, diese zu erklären.
 
-3. Visualisierung an Embedded Hardware Tinkerforge (OLED Display): Ein weiteres Ziel des Projekts ist es, die Brainfuck Programmiersprache auf einer Embedded Hardware Tinkerforge (OLED Display) zu visualisieren. Dies beinhaltet die Entwicklung einer Runtime-Umgebung, um sicherzustellen, dass die Programmiersprache auf der Hardware effektiv und effizient dargestellt wird. Marvin wird sich auf die Entwicklung von verschiedenen Runtime-Umgebungen konzentrieren, um sicherzustellen, dass die Visualisierung der Programmiersprache auf der Hardware optimal ist.
+3. Visualisierung an Embedded Hardware Tinkerforge: Ein weiteres Ziel des Projekts ist es, die Brainfuck Programmiersprache auf einer Embedded Hardware wie Tinkerforge zu visualisieren. Dies beinhaltet die Entwicklung einer Runtime-Umgebung, um sicherzustellen, dass die Programmiersprache auf der Hardware effektiv und effizient dargestellt wird. Marvin wird sich auf die Entwicklung von verschiedenen Runtime-Umgebungen konzentrieren, um sicherzustellen, dass die Visualisierung der Programmiersprache auf der Hardware optimal abläuft.
 
 #### Zusätzliche Ziele
 
-1. Vertiefung des Verständnisses von Java: Die Entwicklung des Brainfuck Compilers von Grund auf bietet eine hervorragende Gelegenheit, unser Verständnis von Java zu vertiefen. Wir werden sicherstellen, dass wir ein tiefes Verständnis der Programmiersprache Java haben und in der Lage sind, effektiv damit zu arbeiten.
+1. Vertiefung des Verständnisses von Java: Die Entwicklung des Brainfuck Compilers von Grund auf bietet eine hervorragende Gelegenheit, unser Verständnis von Java zu vertiefen. Wir werden sicherstellen, dass wir ein tiefes Verständnis der Programmiersprache Java haben für unseren Zweck und in der Lage sind, effektiv damit zu arbeiten.
 
-2. Vertiefung des Verständnisses von Brainfuck: Die Implementierung der Brainfuck Programmiersprache bietet eine hervorragende Gelegenheit, unser Verständnis von Brainfuck zu vertiefen. Wir werden sicherstellen, dass wir ein tiefes Verständnis der Programmiersprache haben und in der Lage sind, effektiv damit zu arbeiten.
+2. Vertiefung des Verständnisses von Brainfuck: Mit der Implementierung können wir unser Verständnis von Brainfuck vertiefen. Dies ist notwendig, um dem Compiler zu schreiben.
 
 3. Entwicklung von systematischen Abläufen: Ein wichtiger Teil des Projekts ist die Entwicklung von systematischen Abläufen beim Erstellen von Codes. Wir werden sicherstellen, dass wir die besten Praktiken bei der Entwicklung von Codes einsetzen, um die Qualität unserer Arbeit zu verbessern.
 
-4. Verbesserung der Zusammenarbeit: Ein weiteres Ziel des Projekts besteht darin, unsere Zusammenarbeit zu verbessern. Wir werden uns gegenseitig beraten und unterstützen, um sicherzustellen, dass jeder von uns das Projekt erfolgreich abschließen kann. Wir werden auch sicherstellen, dass wir effektive Kommunikationswege etablieren, um sicherzustellen, dass wir uns während des gesamten Projekts auf dem gleichen Stand halten.
+4. Verbesserung der Zusammenarbeit: Ein weiteres Ziel des Projekts besteht darin, unsere Zusammenarbeit zu verbessern. Wir werden uns gegenseitig beraten und unterstützen, um sicherzustellen, dass jeder von uns das Projekt erfolgreich abschliessen kann. Wir werden auch sicherstellen, dass wir effektive Kommunikationswege benutzen, um sicherzustellen, dass wir uns während des gesamten Projekts auf dem gleichen Stand halten und effizient arbeiten können.
 
-5. Verbesserung der technischen Fähigkeiten: Dieses Projekt bietet uns eine hervorragende Gelegenheit, unsere technischen Fähigkeiten zu verbessern. Wir werden sicherstellen, dass wir unser Verständnis von Java, Brainfuck und Embedded Hardware Tinkerforge (OLED Display) vertiefen und unsere Fähigkeiten in der Programmierung und Implementierung von Codes verbessern.
+5. Verbesserung der technischen Fähigkeiten: Dieses Projekt bietet uns eine gute Gelegenheit, unsere technischen Fähigkeiten zu verbessern. Wir werden viel mit Brainfuck, java und Tinkerforge arbeiten und uns tief in die Materie einarbeiten müssen. Wir werden dabei viel neues dazulernen.
 
 #### Projektbeteiligte
 
@@ -139,7 +154,7 @@ Marvin Huber: Marvin wird sich auf die Entwicklung von verschiedenen Runtime-Umg
 
 ### Zusammenfassung
 
-Insgesamt zielt dieses Projekt darauf ab, eine begleitende Projektdokumentation zu erstellen, die die Entwicklung und Implementierung eines Brainfuck Compilers umfasst. Wir werden sicherstellen, dass wir ein tiefes Verständnis von Java, Brainfuck und systematischen Abläufen beim Erstellen von Codes haben. Wir werden auch sicherstellen, dass die Brainfuck Programmiersprache effektiv auf der Embedded Hardware Tinkerforge (OLED Display) visualisiert wird. Das Projekt bietet uns eine hervorragende Gelegenheit, unsere technischen Fähigkeiten zu verbessern und unsere Zusammenarbeit zu verbessern. Wir sind zuversichtlich, dass wir das Projekt erfolgreich abschließen werden und die gesteckten Ziele erreichen werden.
+Insgesamt zielt dieses Projekt darauf ab, eine begleitende Projektdokumentation zu erstellen, die die Entwicklung und Implementierung eines Brainfuck Compilers umfasst. Wir werden sicherstellen, dass wir ein tiefes Verständnis von Java, Brainfuck und systematischen Abläufen beim Erstellen von Codes haben. Wir werden auch sicherstellen, dass die Brainfuck Programmiersprache auf der Hardware Tinkerforge  visualisiert wird. Damit können wir unsere Programmier-fähigkeiten verbessern und lernen, besser zusammen zu arbeiten. Wir sind zuversichtlich, dass wir das Projekt erfolgreich abschliessen werden und die gesteckten Ziele erreichen werden.
 
 ## Abgrenzungen
 
@@ -153,17 +168,17 @@ Es ist jedoch wichtig zu betonen, dass das Projekt nicht den Anspruch hat, zur P
 
 Eine Risikoanalyse ist eine wichtige Komponente bei der Planung eines Projekts, um potenzielle Risiken zu identifizieren und Strategien zu entwickeln, um diese Risiken zu minimieren oder zu vermeiden. Im Folgenden sind einige Risiken aufgeführt, die bei der Entwicklung des Brainfuck Compilers und der Visualisierung der Programmiersprache auf der Embedded Hardware Tinkerforge (OLED Display) auftreten könnten:
 
-1. Technische Schwierigkeiten: Das Projekt erfordert ein tiefes Verständnis von Java, Brainfuck und Embedded Hardware Tinkerforge (OLED Display). Es besteht das Risiko, dass technische Schwierigkeiten auftreten können, die das Projekt verzögern oder sogar unmöglich machen können. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir eine gründliche Forschung und Vorbereitung durchführen und dass wir in der Lage sind, die technischen Herausforderungen effektiv zu bewältigen.
+1. Technische Schwierigkeiten: Das Projekt erfordert ein gewisses Verständnis von Java, Brainfuck und Tinkerforge. Es besteht das Risiko, dass technische Schwierigkeiten auftreten könnten, die das Projekt verzögern oder sogar unmöglich machen können. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir eine gründliche Recherche betreiben und Vorbereitung durchführen und dass wir in der Lage sind, die technischen Herausforderungen effektiv zu bewältigen.
 
 2. Zeitliche Einschränkungen: Das Projekt hat einen relativ kleinen Zeitrahmen, innerhalb dessen das Projekt abgeschlossen werden muss. Es besteht das Risiko, dass wir aufgrund von unvorhergesehenen Schwierigkeiten oder Komplikationen den Zeitrahmen nicht einhalten können. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir realistische Zeitpläne erstellen und dass wir unser Bestes tun, um innerhalb dieser Zeitpläne zu arbeiten.
 
-3. Mangelnde Zusammenarbeit: Das Projekt erfordert eine enge Zusammenarbeit zwischen den Projektbeteiligten. Es besteht das Risiko, dass wir nicht effektiv zusammenarbeiten können, was zu Verzögerungen oder Problemen im Projekt führen kann. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir effektive Kommunikationswege etablieren und dass wir uns regelmäßig treffen, (fast jedes Wochenende) um den Fortschritt des Projekts zu besprechen.
+3. Mangelnde Zusammenarbeit: Das Projekt erfordert eine enge Zusammenarbeit zwischen den Projektbeteiligten. Es besteht das Risiko, dass wir nicht effektiv zusammenarbeiten können, was zu Verzögerungen oder Problemen im Projekt führen kann. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir effektive Kommunikationswege etablieren und dass wir uns regelmässig treffen, (fast jedes Wochenende) um den Fortschritt des Projekts zu besprechen.
 
-4. Finanzielle Einschränkungen: Das Projekt erfordert möglicherweise finanzielle Ressourcen für die Beschaffung von Materialien oder für die Anmietung von Räumlichkeiten. Es besteht das Risiko, dass das Projekt aufgrund von finanziellen Einschränkungen gestoppt oder verzögert wird. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir realistische Budgets erstellen und dass wir alternative Finanzierungsoptionen prüfen, falls nötig.
+4. Finanzielle Einschränkungen: Das Projekt erfordert finanzielle Ressourcen für die Beschaffung von Materialien. Es besteht das Risiko, dass das Projekt aufgrund von finanziellen Einschränkungen gestoppt oder verzögert wird. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir realistische Budgets erstellen und dass wir alternative Finanzierungsoptionen prüfen, falls nötig.
 
-5. Fehlende Erfahrung: Es besteht das Risiko, dass wir möglicherweise nicht über ausreichende Erfahrung in der Programmierung oder Implementierung von Codes verfügen, um das Projekt erfolgreich abzuschließen. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir uns gegenseitig unterstützen und dass wir uns regelmäßig schulen und weiterbilden, um unsere technischen Fähigkeiten zu verbessern.
+5. Fehlende Erfahrung: Es besteht das Risiko, dass wir möglicherweise nicht über ausreichende Erfahrung in der Programmierung oder Implementierung von Codes verfügen, um das Projekt erfolgreich abzuschliessen. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir uns gegenseitig unterstützen und dass wir mit Selbststudium und Recherchieren an die geünschten Informationen kommen.
 
-Zusammenfassend kann gesagt werden, dass das Projekt einige Risiken birgt. Wir werden jedoch sicherstellen, dass wir diese Risiken im Auge behalten und dass wir Strategien entwickeln, um diese Risiken zu minimieren oder zu vermeiden. Wir sind zuversichtlich, dass wir das Projekt erfolgreich abschließen werden und dass wir die gesteckten Ziele erreichen werden.
+Zusammenfassend kann gesagt werden, dass das Projekt einige Risiken birgt. Wir werden jedoch sicherstellen, dass wir diese Risiken im Auge behalten und dass wir Strategien entwickeln, um diese Risiken zu minimieren oder zu vermeiden. Wir sind zuversichtlich, dass wir das Projekt erfolgreich abschliessen werden und dass wir die gesteckten Meilensteine erreichen werden.
 
 ## Risikomanagement Tabelle
 
@@ -171,7 +186,7 @@ Zusammenfassend kann gesagt werden, dass das Projekt einige Risiken birgt. Wir w
 |----------------------------|----------------------------|-------------|--------------------------------|
 | Technische Schwierigkeiten | Mittel                     | Leicht-Mittel        | Gründliche Vorbereitung und Forschung, technische Expertise nutzen, um Herausforderungen effektiv zu bewältigen |
 | Zeitliche Einschränkungen  | Hoch                       | Leicht      | Realistische Zeitpläne erstellen, Priorisierung der Aufgaben, um sicherzustellen, dass das Projekt innerhalb des Zeitrahmens abgeschlossen wird |
-| Mangelnde Zusammenarbeit   | Leicht                     | Mittel      | Effektive Kommunikation und regelmäßige Treffen, um sicherzustellen, dass das Team zusammenarbeitet und Schwierigkeiten frühzeitig erkannt und gelöst werden |
+| Mangelnde Zusammenarbeit   | Leicht                     | Mittel      | Effektive Kommunikation und regelmässige Treffen, um sicherzustellen, dass das Team zusammenarbeitet und Schwierigkeiten frühzeitig erkannt und gelöst werden |
 | Finanzielle Einschränkungen| Niedrig                    | Mittel      | Realistische Budgets erstellen, alternative Finanzierungsmöglichkeiten prüfen, falls nötig |
 | Fehlende Erfahrung         | Hoch                       | Leicht-Mittel        | Selbststudium, gegenseitige Unterstützung und Mentoring, um sicherzustellen, dass das Team über ausreichende Fähigkeiten verfügt. Profitierung von Marvins kenntnissen. |
 
@@ -294,7 +309,7 @@ Mit dem HAT Brick können bis zu **acht** [Bricklets](https://www.tinkerforge.
 
 Note: Der HAT Brick besitzt 7-Pol-Bricklet-Anschlüsse. Über ein 7-Pol- <-> 7-Pol-Kabel können Bricklets an den Brick angeschlossen werden. Es werden nur Bricklets unterstützt, die über einen 7-poligen Anschluss verfügen.
 
-Der Raspberry Pi kann über den HAT Brick mit einer externen 6V-28V DC Stromversorgung betrieben werden. Die integrierte Stromversorgung liefert auch unter großer Last stabile 5V für den Raspberry Pi. Somit können auch angeschlossene Bricklets und verbundene USB-Geräte versorgt werden. Das HAT Brick liefert hierfür eine etwas erhöhte Spannung von 5,3V.
+Der Raspberry Pi kann über den HAT Brick mit einer externen 6V-28V DC Stromversorgung betrieben werden. Die integrierte Stromversorgung liefert auch unter grosser Last stabile 5V für den Raspberry Pi. Somit können auch angeschlossene Bricklets und verbundene USB-Geräte versorgt werden. Das HAT Brick liefert hierfür eine etwas erhöhte Spannung von 5,3V.
 
 Alternativ können HAT Brick und Raspberry Pi auch über USB-C versorgt werden. In diesem Fall muss allerdings sichergestellt werden, dass die Stromversorgung stabile 5V bietet. Dies ist zum Beispiel mit dem offiziellen Raspberry Pi Universal-Netzteil möglich. Die USB/DC Versorgungsspannungen werden vom HAT gemessen und sind über die API zugänglich.
 
@@ -493,7 +508,7 @@ In diesem Abschnitt wird eine Liste erstellt, die die Opcodes des Brainfuck-Code
 
 ### Behandlung von Schleifen
 
-Dieser Abschnitt behandelt die Schleifen in Brainfuck. Hierfür wird eine `Stack`-Datenstruktur verwendet, um die Positionen der öffnenden Klammern in der `ArrayList` `EnumList` zu speichern. Wenn eine schließende Klammer gefunden wird, wird die Position des passenden öffnenden Klammerns aus dem Stack abgerufen und ein neues `BracketPair`-Objekt erstellt, das die beiden Positionen speichert.
+Dieser Abschnitt behandelt die Schleifen in Brainfuck. Hierfür wird eine `Stack`-Datenstruktur verwendet, um die Positionen der öffnenden Klammern in der `ArrayList` `EnumList` zu speichern. Wenn eine schliessende Klammer gefunden wird, wird die Position des passenden öffnenden Klammerns aus dem Stack abgerufen und ein neues `BracketPair`-Objekt erstellt, das die beiden Positionen speichert.
 ![](doc/res/Pasted%20image%2020230311195232.png)
   
 ### Ausführen des Brainfuck-Codes
@@ -503,12 +518,12 @@ Dieser Abschnitt führt den Brainfuck-Code aus, indem er jedes Opcode-Element in
 
 ### Behandlung von Fehlern
 
-Dieser Abschnitt behandelt Fehler, die während der Übersetzung oder Ausführung des Brainfuck-Codes auftreten können. Wenn beispielsweise eine schließende Klammer ohne eine entsprechende öffnende Klammer gefunden wird, wird die Position des Fehlers ausgegeben. Ebenso wird eine Warnung ausgegeben, wenn eine öffnende Klammer gefunden wird, für die es keine passende schließende Klammer gibt.
+Dieser Abschnitt behandelt Fehler, die während der Übersetzung oder Ausführung des Brainfuck-Codes auftreten können. Wenn beispielsweise eine schliesende Klammer ohne eine entsprechende öffnende Klammer gefunden wird, wird die Position des Fehlers ausgegeben. Ebenso wird eine Warnung ausgegeben, wenn eine öffnende Klammer gefunden wird, für die es keine passende schliesende Klammer gibt.
 ![](doc/res/Pasted%20image%2020230311195417.png)
 
 ### Klasse `BracketPair`
 
-Dies ist eine einfache Klasse, die ein Paar von Klammern darstellt. Sie speichert die Positionen der öffnenden und schließenden Klammern in der `ArrayList` `EnumList`.
+Dies ist eine einfache Klasse, die ein Paar von Klammern darstellt. Sie speichert die Positionen der öffnenden und schliessenden Klammern in der `ArrayList` `EnumList`.
 ![](doc/res/Pasted%20image%2020230311195443.png)
 
 ### Enumeration `OpcodeEnum`
@@ -522,7 +537,7 @@ Dies ist eine Enumeration, die die acht Opcodes des Brainfuck-Codes definiert. S
 
 ## Erreichte Ziele
 
-Wir freuen uns, mitteilen zu können, dass wir alle unsere Ziele in diesem Projekt erreicht haben. Die Implementierung des Brainfuck Compilers und die Visualisierung auf der Embedded Hardware Tinkerforge (OLED Display) wurden erfolgreich abgeschlossen. Wir haben viel über Java, Brainfuck und systematische Abläufe beim Erstellen von Codes gelernt und sind an den Herausforderungen gewachsen.
+Wir freuen uns, mitteilen zu können, dass wir alle unsere Ziele in diesem Projekt erreicht haben. Die Implementierung des Brainfuck Compilers und die Visualisierung auf der Embedded Hardware Tinkerforge wurden erfolgreich abgeschlossen. Wir haben viel über Java, Brainfuck und systematische Abläufe beim Erstellen von Codes gelernt und sind an den Herausforderungen gewachsen.
 
 ## Schwierigkeiten
 
@@ -530,7 +545,7 @@ Einige Schwierigkeiten im Zeitmanagement bei der Programmierung in Java führten
 
 ## Verbesserungsvorschläge
 
-Für zukünftige Projekte empfehlen wir eine sorgfältige Einschätzung des Projekts und eine klare Definition der Ziele, um sicherzustellen, dass das Projekt reibungslos verläuft. Wir schlagen auch vor, regelmäßige Meetings und Überprüfungen des Fortschritts durchzuführen, um auf dem Laufenden zu bleiben und Verzögerungen zu minimieren.
+Für zukünftige Projekte empfehlen wir eine sorgfältige Einschätzung des Projekts und eine klare Definition der Ziele, um sicherzustellen, dass das Projekt reibungslos verläuft. Wir schlagen auch vor, regelmässige Meetings und Überprüfungen des Fortschritts durchzuführen, um auf dem Laufenden zu bleiben und Verzögerungen zu minimieren.
 
 ## Schlussfolgerung
 
@@ -540,14 +555,21 @@ Zusammenfassend war dies ein erfolgreiches Projekt, das uns viel Wissen und Erfa
 
 ## Ausblick
 
-Das erfolgreiche Abschließen dieses Projekts gibt uns die Möglichkeit, uns auf zukünftige Projekte zu freuen und zu planen. Wir haben in diesem Projekt viel gelernt und sind sicher, dass dieses Wissen uns bei zukünftigen Herausforderungen helfen wird. Wir planen, das Wissen und die Erfahrung, die wir in diesem Projekt gewonnen haben, in unseren zukünftigen Projekten anzuwenden und weiterzuentwickeln.
+Das erfolgreiche Abschliessen dieses Projekts gibt uns die Möglichkeit, uns auf zukünftige Projekte zu freuen und zu planen. Wir haben in diesem Projekt viel gelernt und sind sicher, dass dieses Wissen uns bei zukünftigen Herausforderungen helfen wird. Wir planen, das Wissen und die Erfahrung, die wir in diesem Projekt gewonnen haben, in unseren zukünftigen Projekten anzuwenden und weiterzuentwickeln.
 
 Wir werden auch weiterhin daran arbeiten, unsere Fähigkeiten zu verbessern und uns auf unsere individuellen Interessen und Stärken zu konzentrieren. Wir sind dankbar für die Chance, an diesem Projekt teilgenommen zu haben und freuen uns darauf, unser Wissen in zukünftigen Projekten anzuwenden. Besonders in der Programmiersprache Java erwarten wir weitere Projekte und sind mit diesen Erfahrungen im gepäck nun besser vorbereitet.
 
 ## Schlusswort
 
-Wir möchten uns bei allen bedanken, die uns bei diesem Projekt unterstützt haben. Ein besonderer Dank geht an unser Team, das engagiert zusammengearbeitet hat, um dieses Projekt erfolgreich abzuschließen. Wir möchten auch unseren Betreuern und Lehrern danken, die uns während des Projekts unterstützt und inspiriert haben.
+Wir möchten uns bei allen bedanken, die uns bei diesem Projekt unterstützt haben. Ein besonderer Dank geht an unser Team, das engagiert zusammengearbeitet hat, um dieses Projekt erfolgreich abzuschliessen. Wir möchten auch unseren Betreuern und Lehrern danken, die uns während des Projekts unterstützt und inspiriert haben.
 
 Dieses Projekt hat uns nicht nur gezeigt, wie wichtig eine sorgfältige Planung und Durchführung von Projekten ist, sondern auch, wie wichtig es ist, als Team zusammenzuarbeiten und sich gegenseitig zu unterstützen. Wir haben viel gelernt und sind stolz auf das, was wir erreicht haben.
 
-Abschließend möchten wir sagen, dass wir uns auf zukünftige Projekte freuen und uns darauf konzentrieren werden, unser Wissen und unsere Fähigkeiten zu erweitern und zu verbessern. Wir sind dankbar für die Erfahrungen, die wir in diesem Projekt gemacht haben und freuen uns auf die Herausforderungen, die uns in Zukunft erwarten.
+Abschliessend möchten wir sagen, dass wir uns auf zukünftige Projekte freuen und uns darauf konzentrieren werden, unser Wissen und unsere Fähigkeiten zu erweitern und zu verbessern. Wir sind dankbar für die Erfahrungen, die wir in diesem Projekt gemacht haben und freuen uns auf die Herausforderungen, die uns in Zukunft erwarten.
+
+# Anhang
+
+
+Orientation Dokumentation Tinkerforge HAT: https://www.tinkerforge.com/en/
+
+
