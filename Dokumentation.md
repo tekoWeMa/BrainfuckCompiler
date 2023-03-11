@@ -24,7 +24,7 @@ Insgesamt haben wir wertvolle Erfahrungen gesammelt und unsere Programmierkenntn
   - [Ausgangslage](#ausgangslage)
   - [Projektauftrag](#projektauftrag)
     - [Zielsetzung](#zielsetzung)
-      - [Ziele im Detail:](#ziele-im-detail)
+      - [Ziele im Detail](#ziele-im-detail)
       - [Zusätzliche Ziele](#zusätzliche-ziele)
       - [Projektbeteiligte](#projektbeteiligte)
     - [Zusammenfassung](#zusammenfassung)
@@ -41,6 +41,7 @@ Insgesamt haben wir wertvolle Erfahrungen gesammelt und unsere Programmierkenntn
   - [Raspberry Konfiguration](#raspberry-konfiguration)
   - [SSH einschalten](#ssh-einschalten)
   - [Statische IP vergeben](#statische-ip-vergeben)
+- [Display HAT connector Setup](#display-hat-connector-setup)
   - [Brick Hat](#brick-hat)
   - [Features](#features)
   - [Beschreibung](#beschreibung)
@@ -49,17 +50,6 @@ Insgesamt haben wir wertvolle Erfahrungen gesammelt und unsere Programmierkenntn
     - [Interface](#interface)
   - [Installation Tinkerforge software](#installation-tinkerforge-software)
     - [Brick Daemon (brickd)](#brick-daemon-brickd)
-- [Brick Daemon Installation auf Linux](#brick-daemon-installation-auf-linux)
-  - [Installation](#installation)
-  - [Debian Paket](#debian-paket)
-    - [APT Repository](#apt-repository)
-    - [Händische Installation](#händische-installation)
-  - [Installierte Version bestimmen](#installierte-version-bestimmen)
-  - [Brick Viewer installation](#brick-viewer-installation)
-    - [Linux Installation](#linux-installation)
-  - [Debian Paket](#debian-paket-1)
-    - [APT Repository](#apt-repository-1)
-    - [Händische Installation](#händische-installation-1)
   - [Installation auf Raspberry PI OS](#installation-auf-raspberry-pi-os)
   - [Einrichtung](#einrichtung)
   - [Pakete](#pakete)
@@ -78,7 +68,6 @@ Insgesamt haben wir wertvolle Erfahrungen gesammelt und unsere Programmierkenntn
 - [Schlussteil](#schlussteil)
   - [Ausblick](#ausblick)
   - [Schlusswort](#schlusswort)
-
 
 # Vorwort
 
@@ -114,7 +103,7 @@ Projektauftrag: Erstellung einer Projektdokumentation, Implementierung von Brain
 
 Dieses Projekt zielt darauf ab, eine begleitende Projektdokumentation zu erstellen, die die Entwicklung und Implementierung eines Brainfuck Compilers umfasst. Das Ziel besteht darin, die Programmiersprache Brainfuck zu implementieren und diese auf einer Embedded Hardware Tinkerforge (OLED Display) zu visualisieren. Ein Teil des Projekts beinhaltet auch, dass wir uns gegenseitig beraten und unterstützen, um unser Wissen in Java, Brainfuck und systematischen Abläufen beim Erstellen von Codes zu vertiefen.
 
-#### Ziele im Detail:
+#### Ziele im Detail
 
 1. Erstellung einer begleitenden Projektdokumentation: Es wird eine detaillierte Projektdokumentation erstellt, die den Entwicklungsprozess, die Implementierung und die Ergebnisse des Projekts beschreibt. Die Dokumentation umfasst auch Anweisungen und Anleitungen für die Implementierung des Brainfuck Compilers und die Visualisierung der Programmiersprache auf der Embedded Hardware Tinkerforge (OLED Display).
 
@@ -276,6 +265,8 @@ Einstellungen mit ``Ctrl + o`` schreiben und den Editor mit ``Ctrl + x`` verlass
 
 `sudo reboot`
 
+# Display HAT connector Setup
+
 ## Brick Hat
 
 ## Features
@@ -344,102 +335,6 @@ Der Brick Daemon ist ein Daemon (bzw. Service für Windows) der als eine Brücke
 Der Daemon leitet Daten zwischen der USB Verbindung und den TCP/IP Sockets hin und her. Bei der Benutzung der API Bindings wird eine TCP/IP Verbindung zum Brick Daemon hergestellt. Dieses Konzept erlaubt es Bindings für nahezu jede Programmiersprache ohne Abhängigkeiten zu erstellen. Dadurch ist es möglich Bricks und Bricklets über eingebettete Geräte wie Smartphones zu programmieren, die nur spezifische Programmiersprachen unterstützten.
 
 Zusätzlich ist es möglich den PC auf dem der Brick Daemon läuft von dem PC auf dem der Benutzercode läuft zu trennen. Dadurch ist das Steuern über ein Smartphone oder auch über das Internet möglich.
-
-# Brick Daemon Installation auf Linux
-
-## Installation
-
-**Voraussetzungen**: libusb 1.0.6 oder neuer
-
-Der [Brick Daemon](https://www.tinkerforge.com/de/doc/Software/Brickd.html#brickd) kann auf einer Debian basierten Distribution (Ubuntu, Mint, etc.) aus einer `.deb` Datei installiert werden. Für Arch Linux steht im AUR das Paket [brickd](https://aur.archlinux.org/packages/brickd/) zur Verfügung. Auf anderen Distributionen kann der Brick Daemon aus dem Quelltext installiert werden.
-
-## Debian Paket
-
-Das Brick Daemon Debian Paket steht im [APT Repository](https://download.tinkerforge.com/apt/) bereit, kann aber auch händisch installiert werden.
-
-### APT Repository
-
-Zuerst entsprechend der [Anleitung](https://www.tinkerforge.com/de/doc/Software/APT_Repository.html#apt-repository) das APT Repository hinzufügen. Dann das Brick Daemon Paket installieren:
-
-sudo apt install brickd
-
-Der Brick Daemon wird nach der Installation und beim Hochfahren des Systems automatisch gestartet.
-
-### Händische Installation
-
-Als erstes muss das passende Brick Daemon `.deb` von der [Download-Seite](https://www.tinkerforge.com/de/doc/Downloads.html#downloads-tools) heruntergeladen werden. Nach einem Rechtsklick auf die Datei kann "Open with GDebi Package Installer" ausgewählt werden:
-
-![](res/Pasted%20image%2020230217111112.png)
-
-Klick auf "Install Package":
-
-![](res/Pasted%20image%2020230217111134.png)
-
-Fertig:
-
-![](res/Pasted%20image%2020230217111159.png)
-
-
-## Installierte Version bestimmen
-
-Seit Brick Daemon Version 1.0.8 ist es möglich die aktuell installierte Brick Daemon Version zu erfragen. Dafür unterstützt der Brick Daemon den Kommandozeilenparameter --version:
-
-- Linux:
-
-    `brickd --version`
-
-- Windows XP:
-
-    `"C:\Programme\Tinkerforge\Brickd\brickd.exe" --version`
-
-- Windows Vista oder neuer:
-
-    `"C:\Programme (x86)\Tinkerforge\Brickd\brickd.exe" --version`
-
-- macOS (bis Brick Daemon 2.2.1):
-
-    `/usr/libexec/brickd.app/Contents/MacOS/brickd --version`
-
-- macOS (seit Brick Daemon 2.2.2):
-
-   `/usr/local/libexec/brickd.app/Contents/MacOS/brickd --version`
-
-## Brick Viewer installation
-
-### Linux Installation
-
-**Voraussetzungen**: Python 3.5 und PyQt 5.5 mit QtOpenGL oder neuer
-
-Der [Brick Viewer](https://www.tinkerforge.com/de/doc/Software/Brickv.html#brickv) kann auf einer Debian basierten Distribution (Ubuntu, Mint, etc.) aus einer `.deb` Datei installiert werden. Für Arch Linux steht im AUR das Paket [brickv](https://aur.archlinux.org/packages/brickv/) zur Verfügung. Auf anderen Distributionen kann der Brick Viewer aus seinem Quelltext installiert werden.
-
-## Debian Paket
-
-Das Brick Viewer Debian Paket steht in unserem [APT Repository](https://download.tinkerforge.com/apt/) bereit, kann aber auch händisch installiert werden.
-
-### APT Repository
-
-Zuerst entsprechend der [Anleitung](https://www.tinkerforge.com/de/doc/Software/APT_Repository.html#apt-repository) das APT Repository hinzufügen. Dann das Brick Viewer Paket installieren:
-
-sudo apt install brickv`
-
-Der Brick Viewer kann jetzt über das Anwendungsmenü aus der Unterkategorie Sonstiges gestartet werden, oder aus einem Terminal heraus mit:
-
-`brickv`
-
-### Händische Installation
-
-Als erstes muss das Brick Viewer `.deb` von der [Download-Seite](https://www.tinkerforge.com/de/doc/Downloads.html#downloads-tools) heruntergeladen werden. Durch einen Rechtsklick auf die Datei und auswählen von "Mit GDebi-Paket-Installationsprogramm öffnen" wird das Installationsprogramm gestartet:
-
-![](res/Pasted%20image%2020230217120719.jpg)
-
-Ein Klick auf "Paket Installieren" startet dann die eigentliche Installation:
-
-![](res/Pasted%20image%2020230217120731.jpg)
-
-Der Installationsprozess ist nun abgeschlossen:
-
-![](res/Pasted%20image%2020230217120745.jpg)
-
 
 ## Installation auf Raspberry PI OS
 
@@ -513,7 +408,6 @@ Hierzu muss auf "Updates / Flashing" geklickt werden. Der Dialog zeigt die anges
 ![](res/Pasted%20image%2020230217121414.jpg)
 
 Der Dialog ermöglicht es alle Bricklets gleichzeitig über den Knopf "Auto-Update All Bricklets" auf die neuste Softwareversion zu bringen. Bricks können nicht automatisch auf den neusten Stand gebracht werden (siehe [Brick Firmware Flashing](https://www.tinkerforge.com/de/doc/Software/Brickv.html#brickv-flash-brick-firmware)).
-
 
 # Tests und implementation marvin
 
