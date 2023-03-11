@@ -1,0 +1,11 @@
+Wieso wir das Thema gewählt haben, einen Brainfuck-Compiler zu schreiben, ist für uns eine faszinierende Herausforderung. Brainfuck ist eine sehr einfache, aber auch sehr abstrakte Programmiersprache, die nur aus acht Befehlen besteht und aufgrund ihrer minimalistischen Natur sehr schwierig zu lesen und zu schreiben ist.
+
+Ein Brainfuck-Compiler ist ein Programm, das geschrieben wurde, um Brainfuck-Code in eine ausführbare Form zu übersetzen, die von einer Maschine verstanden werden kann. Ein Brainfuck-Compiler zu schreiben ist für uns aus folgenden Gründen interessant:
+
+Erstens ist es eine grossartige Möglichkeit, um Programmierkenntnisse zu vertiefen und zu verbessern. Brainfuck ist eine sehr einfache Programmiersprache, die jedoch viele Konzepte der Informatik wie das Konzept des "Speichers" oder "Pointer" erfordert, um sie effektiv zu nutzen. Durch das Schreiben eines Compilers für diese Sprache kann man das Verständnis für diese Konzepte vertiefen und gleichzeitig das eigene Programmiervermögen verbessern.
+
+Zweitens kann es für die Forschung in der theoretischen Informatik von Nutzen sein. Brainfuck wird oft als Beispiel für eine sogenannte "Turing-vollständige" Sprache verwendet, was bedeutet, dass sie in der Lage ist, jede Berechnung durchzuführen, die auch von einem Universalcomputer durchgeführt werden kann. Dies bedeutet, dass das Schreiben eines Compilers für Brainfuck ein interessantes Beispiel für die Erforschung von Berechnungen und Programmiersprachen sein kann.
+
+Drittens kann es einfach aus Gründen der Unterhaltung sein. Wir haben ein grosses intresses an spannend Informatik Theman, finden es einfach faszinierend, mit Brainfuck zu arbeiten und zu sehen, wie sich komplexe Algorithmen mit nur wenigen Befehlen schreiben lassen.
+
+Es bietet die Möglichkeit, Programmierkenntnisse zu verbessern, theoretische Konzepte zu erforschen und sich einfach mit einer faszinierenden Programmiersprache zu beschäftigen. Insgesamt ist das Schreiben eines Brainfuck-Compilers eine herausfordernde und interessante Aufgabe, die uns Stellen möchten aufgrund von den oberen genannten Gründen, deswegen haben wir uns entschieden dafür.
