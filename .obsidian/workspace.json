@@ -13,31 +13,43 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projektauftrag.md",
-                "mode": "preview",
+                "file": "Abschlussbericht.md",
+                "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "b20cdb089545959e",
+            "id": "425d027664a8262c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "doc/Dokumentation.md",
-                "mode": "preview",
+                "file": "Schlussteil.md",
+                "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "481bdc8307aa0c48",
+            "id": "fe81954beebd8327",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "NotizenMario.md",
+                "file": "Management Summary.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "bbb33e692710bc71",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Abschlussbericht.md",
                 "mode": "source",
                 "source": false
               }
@@ -49,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Risikoanalyse.md",
+                "file": "doc/Was_Ist_Brainfuck.md",
                 "mode": "source",
                 "source": false
               }
@@ -140,7 +152,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Risikoanalyse.md",
+                "file": "Abschlussbericht.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -157,7 +169,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Risikoanalyse.md",
+                "file": "Abschlussbericht.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -180,7 +192,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Risikoanalyse.md"
+                "file": "Abschlussbericht.md"
               }
             }
           }
@@ -201,24 +213,33 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c3c3849abd429e7f",
+  "active": "bbb33e692710bc71",
   "lastOpenFiles": [
-    "doc/Was_Ist_Brainfuck.md",
-    "NotizenMario.md",
-    "Risikoanalyse.md",
+    "Management Summary.md",
+    "Schlussteil.md",
+    "Abschlussbericht.md",
     "Projektauftrag.md",
+    "NotizenMario.md",
+    "Interpreter und Compiler.md",
+    "RustSetup.md",
+    "doc/Was_Ist_Brainfuck.md",
+    "doc/res/2023-03-11 16_46_56-Window.png",
+    "doc/res/Pasted image 20230311164736.png",
+    "doc/res/Pasted image 20230311164458.png",
+    "doc/res/Pasted image 20230311164335.png",
+    "Risikoanalyse.md",
     "doc/Dokumentation.md",
+    "doc/res/Pasted image 20230311163947.png",
+    "doc/Pflichtenheft.md",
+    "doc/Präsentation.md",
+    "doc/Projektplan.md",
     "doc/Projektstatusbericht.md",
     "doc/Wieso.md",
-    "doc/Pflichtenheft.md",
-    "doc/Projektplan.md",
-    "doc/Präsentation.md",
     "Projekt",
     "doc/res/Pasted image 20230217111134.png",
     "doc/res/Pasted image 20230217111112.png",
     "doc/res/Raspi-Interface.png",
     "doc/res/Pasted image 20230217110528.png",
-    "doc/res/Pasted image 20230217110454.png",
-    "doc/res/SSH.png"
+    "doc/res/Pasted image 20230217110454.png"
   ]
 }
