@@ -23,6 +23,11 @@ Insgesamt haben wir wertvolle Erfahrungen gesammelt und unsere Programmierkenntn
 - [Initialisierungsphase](#initialisierungsphase)
   - [Ausgangslage](#ausgangslage)
   - [Projektauftrag](#projektauftrag)
+    - [Zielsetzung](#zielsetzung)
+      - [Ziele im Detail:](#ziele-im-detail)
+      - [Zusätzliche Ziele](#zusätzliche-ziele)
+      - [Projektbeteiligte](#projektbeteiligte)
+    - [Zusammenfassung](#zusammenfassung)
   - [Abgrenzungen](#abgrenzungen)
 - [Risikoanalyse](#risikoanalyse)
   - [Risikomanagement Tabelle](#risikomanagement-tabelle)
@@ -105,11 +110,11 @@ Daher ist die Projektarbeit ein wichtiger Schritt, um die Kenntnisse von uns in 
 
 Projektauftrag: Erstellung einer Projektdokumentation, Implementierung von Brainfuck Programmiersprache und Visualisierung an Embedded Hardware Tinkerforge (OLED Display)
 
-Zielsetzung:
+### Zielsetzung
 
 Dieses Projekt zielt darauf ab, eine begleitende Projektdokumentation zu erstellen, die die Entwicklung und Implementierung eines Brainfuck Compilers umfasst. Das Ziel besteht darin, die Programmiersprache Brainfuck zu implementieren und diese auf einer Embedded Hardware Tinkerforge (OLED Display) zu visualisieren. Ein Teil des Projekts beinhaltet auch, dass wir uns gegenseitig beraten und unterstützen, um unser Wissen in Java, Brainfuck und systematischen Abläufen beim Erstellen von Codes zu vertiefen.
 
-Ziele im Detail:
+#### Ziele im Detail:
 
 1. Erstellung einer begleitenden Projektdokumentation: Es wird eine detaillierte Projektdokumentation erstellt, die den Entwicklungsprozess, die Implementierung und die Ergebnisse des Projekts beschreibt. Die Dokumentation umfasst auch Anweisungen und Anleitungen für die Implementierung des Brainfuck Compilers und die Visualisierung der Programmiersprache auf der Embedded Hardware Tinkerforge (OLED Display).
 
@@ -117,7 +122,7 @@ Ziele im Detail:
 
 3. Visualisierung an Embedded Hardware Tinkerforge (OLED Display): Ein weiteres Ziel des Projekts ist es, die Brainfuck Programmiersprache auf einer Embedded Hardware Tinkerforge (OLED Display) zu visualisieren. Dies beinhaltet die Entwicklung einer Runtime-Umgebung, um sicherzustellen, dass die Programmiersprache auf der Hardware effektiv und effizient dargestellt wird. Marvin wird sich auf die Entwicklung von verschiedenen Runtime-Umgebungen konzentrieren, um sicherzustellen, dass die Visualisierung der Programmiersprache auf der Hardware optimal ist.
 
-Zusätzliche Ziele:
+#### Zusätzliche Ziele
 
 1. Vertiefung des Verständnisses von Java: Die Entwicklung des Brainfuck Compilers von Grund auf bietet eine hervorragende Gelegenheit, unser Verständnis von Java zu vertiefen. Wir werden sicherstellen, dass wir ein tiefes Verständnis der Programmiersprache Java haben und in der Lage sind, effektiv damit zu arbeiten.
 
@@ -129,13 +134,13 @@ Zusätzliche Ziele:
 
 5. Verbesserung der technischen Fähigkeiten: Dieses Projekt bietet uns eine hervorragende Gelegenheit, unsere technischen Fähigkeiten zu verbessern. Wir werden sicherstellen, dass wir unser Verständnis von Java, Brainfuck und Embedded Hardware Tinkerforge (OLED Display) vertiefen und unsere Fähigkeiten in der Programmierung und Implementierung von Codes verbessern.
 
-Projektbeteiligte:
+#### Projektbeteiligte
 
 Mario Weilenmann: Mario ist verantwortlich für die Entwicklung des Brainfuck Compilers und die Implementierung der Programmiersprache auf der Embedded Hardware Tinkerforge (OLED Display).
 
 Marvin Huber: Marvin wird sich auf die Entwicklung von verschiedenen Runtime-Umgebungen konzentrieren, um sicherzustellen, dass die Visualisierung der Programmiersprache auf der Embedded Hardware Tinkerforge (OLED Display) optimal ist. Er wird auch Mario bei der Entwicklung des Brainfuck Compilers unterstützen und sicherstellen, dass der Code effektiv und effizient implementiert wird.
 
-Zusammenfassung:
+### Zusammenfassung
 
 Insgesamt zielt dieses Projekt darauf ab, eine begleitende Projektdokumentation zu erstellen, die die Entwicklung und Implementierung eines Brainfuck Compilers umfasst. Wir werden sicherstellen, dass wir ein tiefes Verständnis von Java, Brainfuck und systematischen Abläufen beim Erstellen von Codes haben. Wir werden auch sicherstellen, dass die Brainfuck Programmiersprache effektiv auf der Embedded Hardware Tinkerforge (OLED Display) visualisiert wird. Das Projekt bietet uns eine hervorragende Gelegenheit, unsere technischen Fähigkeiten zu verbessern und unsere Zusammenarbeit zu verbessern. Wir sind zuversichtlich, dass wir das Projekt erfolgreich abschließen werden und die gesteckten Ziele erreichen werden.
 
