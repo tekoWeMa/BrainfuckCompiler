@@ -49,30 +49,19 @@ Insgesamt haben wir wertvolle Erfahrungen gesammelt und unsere Programmierkenntn
   - [Debian Paket](#debian-paket)
     - [APT Repository](#apt-repository)
     - [Händische Installation](#händische-installation)
-  - [Logging](#logging)
-  - [Konfiguration](#konfiguration)
-    - [WebSockets](#websockets)
-    - [Authentifizierung](#authentifizierung)
   - [Installierte Version bestimmen](#installierte-version-bestimmen)
   - [Brick Viewer installation](#brick-viewer-installation)
     - [Linux Installation](#linux-installation)
   - [Debian Paket](#debian-paket-1)
     - [APT Repository](#apt-repository-1)
     - [Händische Installation](#händische-installation-1)
-  - [Aus Quelltext](#aus-quelltext)
   - [Installation auf Raspberry PI OS](#installation-auf-raspberry-pi-os)
   - [Einrichtung](#einrichtung)
   - [Pakete](#pakete)
   - [Übersicht Brick Viewer](#übersicht-brick-viewer)
   - [Verwendung](#verwendung)
+  - [Updates](#updates)
   - [Aktuellen Stand bestimmen / Nach Updates suchen](#aktuellen-stand-bestimmen--nach-updates-suchen)
-  - [Brick Firmware Flashing](#brick-firmware-flashing)
-    - [Mit Brick Viewer](#mit-brick-viewer)
-      - [Vorbereitung](#vorbereitung)
-      - [Serielle Schnittstelle](#serielle-schnittstelle)
-      - [Flashen](#flashen)
-    - [Mit brick-flash auf Linux](#mit-brick-flash-auf-linux)
-  - [Bricklet Plugin Flashing](#bricklet-plugin-flashing)
 - [Tests und implementation marvin](#tests-und-implementation-marvin)
 - [Interpreter und Compiler](#interpreter-und-compiler)
 - [Einführung](#einführung)
@@ -385,71 +374,6 @@ Fertig:
 
 ![](res/Pasted%20image%2020230217111159.png)
 
-## Logging
-
-Standardmäßig loggt Brick Daemon Nachrichten über Informationen, Warnungen und Fehler. Diese beinhalten auch Informationen über USB Hotplug und TCP/IP Verbindungen.
-
-- Linux und macOS: Nachrichten werden in diesem Log-Datei geschrieben:
-
-    `/var/log/brickd.log`
-
-- Windows: Nachrichten werden einer Log-Datei namens `brickd.log` im Brick Daemon Data-Verzeichnis gespeichert:
-
-  - Windows XP:
-
-        `C:\Dokumente und Einstellungen\All Users\Application Data\Tinkerforge\Brickd\brickd.log`
-
-  - Windows Vista oder neuer:
-
-        `C:\ProgramData\Tinkerforge\Brickd\brickd.log`
-
-    Das `logviewer.exe` Tool (Teil der brickd Installation) kann diese Log-Datei anzeigen und beinhaltet auch eine Live Log Ansicht.
-
-Falls der Standard Logging Einstellung nicht genug Details ausgibt, um ein Problem debuggen zu können, dann kann das Debug Log Level aktiviert werden. Dies ist standardmäßig nicht aktiviert, da es die Menge der ausgegebenen Log-Nachrichten stark erhöht, so dass es einen Einfluss auf den Nachrichtendurchsatz von brickd haben kann.
-
-- Windows: Das `logviewer.exe` Tool stellt ebenfalls Live Log Ansicht bereit, die auf Debug Level gestellt werden kann.
-
-## Konfiguration
-
-Brick Daemon verwendet eine Konfigurationsdatei mit Schlüssel-Wert Format:
-
-- Linux und macOS: Die Konfigurationsdatei heißt `brickd.conf` und ist hier gespeichert:
-
-    `/etc/brickd.conf`
-
-- Windows: Die Konfigurationsdatei heißt `brickd.ini` und ist im Brick Daemon Data-Verzeichnis gespeichert:
-
-  - Windows XP:
-
-        `C:\Dokumente und Einstellungen\All Users\Application Data\Tinkerforge\Brickd\brickd.ini`
-
-  - Windows Vista oder neuer:
-
-       `C:\ProgramData\Tinkerforge\Brickd\brickd.ini`
-
-    Das `logviewer.exe` Tool (Teil der brickd Installation) kann diese Konfigurationsdatei bearbeiten.
-
-### WebSockets
-
-Brick Daemon unterstützt seit Version 2.1.0 [WebSockets](https://de.wikipedia.org/wiki/WebSocket). Diese sind standardmäßig deaktiviert. Um WebSockets zu aktivieren muss ein WebSockets-Port in der Brick Daemon Konfigurationsdatei eingetragen werden.
-
-Die WebSockets-Port Option hat den Schlüssel `listen.websocket_port`. Ein Wert von 0 oder das Fehlen des `listen.websocket_port` Schlüssels führt zur deaktiviert der WebSocket-Unterstützung. Hier der Authentifizierungsabschnitt einer Beispiel-Konfiguration, das dem empfohlenen Wert 4280 als WebSockets-Port verwendet:
-
-listen.websocket_port = 4280`
-
-Danach muss Brick Daemon neugestartet werden, um die Änderungen an der Konfigurationsdatei zu übernehmen. Ab jetzt kann die Browser-Version der [JavaScript Bindings](https://www.tinkerforge.com/de/doc/Software/API_Bindings_JavaScript.html#api-bindings-javascript) sich zum Brick Daemon verbinden und Bricks und Brickets steuern.
-
-Bemerkung: Da WebSockets es grundsätzlich ermöglichen, dass jede Webseite in ihrem Browser sich mit ihren Bricks und Bricklets verbinden kann, empfehlen wir [Authentifizierung](https://www.tinkerforge.com/de/doc/Tutorials/Tutorial_Authentication/Tutorial.html#tutorial-authentication) in Kombination mit WebSockets zu verwenden.
-
-### Authentifizierung
-
-Brick Daemon unterstützt seit Version 2.1.0 Authentifizierung. Diese ist standardmäßig deaktiviert. Um Authentifizierung zu aktivieren muss ein Authentifizierungsgeheimnis in der Brick Daemon Konfigurationsdatei eingetragen werden.
-
-Das Authentifizierungsgeheimnis kann maximal 64 ASCII Zeichen lang sein und hat den Schlüssel `authentication.secret`. Ein leerer Wert oder das Fehlen des `authentication.secret` Schlüssels führt zur deaktiviert der Authentifizierung. Hier der Authentifizierungsabschnitt einer Beispiel-Konfiguration die `My Authentication Secret!` als Authentifizierungsgeheimnis verwendet:
-
-`authentication.secret = My Authentication Secret!`
-
-Danach muss Brick Daemon neugestartet werden, um die Änderungen an der Konfigurationsdatei zu übernehmen. Ab jetzt muss jede TCP/IP Verbindung zum Brick Daemon zuerst nachweisen, dass sie das Authentifizierungsgeheimnis kennt, bevor normale Kommunikation stattfinden kann. Für mehr Informationen zur Authentifizierung siehe das dazugehörige [Tutorial](https://www.tinkerforge.com/de/doc/Tutorials/Tutorial_Authentication/Tutorial.html#tutorial-authentication).
 
 ## Installierte Version bestimmen
 
@@ -511,38 +435,6 @@ Der Installationsprozess ist nun abgeschlossen:
 
 ![](res/Pasted%20image%2020230217120745.jpg)
 
-Auf Ubuntu kann auch das Ubuntu Software Center verwendet werden, andere Debian basierte Distributionen bieten ähnliche Werkzeuge zur Paketverwaltung. Der Brick Viewer kann jetzt über das Anwendungsmenü aus der Unterkategorie Sonstiges gestartet werden, oder aus einem Terminal heraus mit:
-
-`brickv`
-
-Statt mittels eines graphischen Installationsprogramms kann der Brick Viewer auch über einen Terminal durch folgende Befehle installiert werden:
-
-`sudo apt-get install python3 python3-pyqt5 python3-pyqt5.qtopengl python3-serial python3-tz python3-tzlocal
-wget --backups=1 https://download.tinkerforge.com/tools/brickv/linux/brickv_linux_latest.deb
-sudo dpkg -i brickv_linux_latest.deb`
-
-## Aus Quelltext
-
-Um den Brick Viewer aus dem Quelltext heraus zu verwenden kann der Quelltext ebenfalls im [Downloadbereich](https://www.tinkerforge.com/de/doc/Downloads.html#downloads-tools) heruntergeladen werden. Auch hier müssen die benötigten Abhängigkeiten installiert werden:
-
-- python3 (>= 3.5)
-- python3-pyqt5 (>= 5.5)
-- python3-pyqt5.qtopengl
-- python3-serial
-- python3-tz
-- python3-tzlocal
-
-Auf Debian basierte Distributionen können diese Pakete wie zuvor per `apt-get` installiert werden. Für andere Distributionen sollte es äquivalente Pakete geben:
-
-`sudo apt-get install python3 python3-pyqt5 python3-pyqt5.qtopengl python3-serial python3-tz python3-tzlocal`
-
-Als erstes müssen die Qt `.ui` Dateien übersetzt werden. Dazu in den `src/` Ordner innerhalb des entpackten Quelltexts wechseln und dort folgenden Befehl ausführen:
-
-`python build_src.py`
-
-Um den Brick Viewer zu starten muss in den `src/brickv/` Ordner gewechselt und dort folgender Befehl ausgeführt werden:
-
-`python main.py`
 
 ## Installation auf Raspberry PI OS
 
@@ -599,7 +491,11 @@ Darüber hinaus kann der Brick Viewer verwendet werden, um den Analog-Digital-Wa
 
 Zuerst muss der Brick Viewer mit dem [Brick Daemon](https://www.tinkerforge.com/de/doc/Software/Brickd.html#brickd) oder z.B. einer [WIFI Extension](https://www.tinkerforge.com/de/doc/Hardware/Master_Extensions/WIFI_Extension.html#wifi-extension) verbunden werden. Dabei kann der Brick Daemon auf dem gleichen oder einem anderen PC als der Brick Viewer laufen. Dazu zuerst die IP Adresse des PCs auf dem der Brick Daemons läuft oder die IP Adresse einer WIFI Extension als Host angeben. Falls Brick Daemon und Viewer auf dem gleichen PC laufen kann der Standardwert `localhost` beibehalten werden. Nach einem Klick auf den "Connect" Knopf werden die verbunden Bricks und Bricklets auf je einem eigenen Tab angezeigt und können getestet werden. Da wir beides auf dem Raspberry PI installiert haben, verbinden wir Brick Viewer über Localhost.
 
-![](res/Pasted%20image%2020230217121252.jpg)
+![](doc/res/Pasted%20image%2020230311191838.png)
+
+Nun ist die Verbindung zum Display hergestellt und wir können weiterfahren.
+
+## Updates
 
 Ein Klick auf den "Updates / Flashing" öffnen einen Dialog mit Informationen über verfügbare Updates und der Möglichkeit Bricks und Bricklets neu zu flashen. Der "Advanced Functions" Knopf öffnet einen Dialog zur Kalibrierung des Analog-Digital-Wandler eines Bricks.
 
@@ -613,90 +509,6 @@ Hierzu muss auf "Updates / Flashing" geklickt werden. Der Dialog zeigt die anges
 
 Der Dialog ermöglicht es alle Bricklets gleichzeitig über den Knopf "Auto-Update All Bricklets" auf die neuste Softwareversion zu bringen. Bricks können nicht automatisch auf den neusten Stand gebracht werden (siehe [Brick Firmware Flashing](https://www.tinkerforge.com/de/doc/Software/Brickv.html#brickv-flash-brick-firmware)).
 
-## Brick Firmware Flashing
-
-Wir empfehlen Brick Viewer zum Flashen von Firmwares zu verwenden. Für Linux System ohne graphische Benutzeroberfläche steht aber auch `brick-flash` zur Verfügung.
-
-### Mit Brick Viewer
-
-Seit Version 1.1.0 kann der Brick Viewer Firmwares auf Bricks flashen. Die jeweils neuste Firmwareversion wird dabei automatisch vom Brick Viewer ermittelt und heruntergeladen. Diese können aber auch manuell im [Downloadbereich](https://www.tinkerforge.com/de/doc/Downloads.html#downloads-brick-firmwares) heruntergeladen werden.
-
-#### Vorbereitung
-
-Um einen Brick flashen zu können, muss dieser per USB zu einem PC mit Brick Viewer verbunden sein. Abhängig vom Typ des Brick ist noch Folgendes zu beachten:
-
-- Bevor ein **IMU Brick (1.0)** neu geflasht wird sollte dessen Kalibrierung exportiert werden, da diese beim Flashen verloren geht. Dies ist allerdings nur dann notwendig, falls eine eigenen Kalibrierung vorgenommen wurde, da die Werkskalibrierung seit Brick Viewer Version 1.1.13 automatisch wiederhergestellt werden kann.
-- Die Hardware Version 2.0 des **Master Bricks** hat eine Änderung im Leiterplattenlayout, die den Bootloader Modus stört, wenn eine Master Extension wie WIFI, RS485 oder Ethernet im Stack vorhanden ist. In diesem Fall muss die Master Extension aus dem Stack entfernt werden, damit der Bootloader Modus richtig funktioniert. Diese Problem wurde in Hardware Version 2.1 korrigiert.
-
-Zum Flashen einer neuen Firmware muss der Brick in den Bootloader Modus versetzt werden. Der **ESP32 Brick** und **ESP32 Ethernet Brick** werden dazu einfach per USB an den PC angeschlossen.
-
-Für alle anderen 4x4cm Brick müssen dazu folgende Schritte durchgeführt:
-
-1. Brick per USB an PC anschließen.
-2. Erase Knopf drücken und gedrückt halten.
-3. Reset Knopf drücken und wieder loslassen.
-4. Erase Knopf wieder loslassen.
-
-Jetzt sollten alle LEDs am 4x4cm Brick aus sein, der Brick sich im Bootloader Modus befinden und am PC sollte eine neue seriellen Schnittstelle auftauchen.
-
-#### Serielle Schnittstelle
-
-Als nächstes muss der Brick Viewer gestartet und der "Updates / Flashing" Dialog geöffnet werden:
-
-![](res/Pasted%20image%2020230217121445.jpg)
-
-Die "Serial Port" Dropdown-Box zeigt alle verfügbaren seriellen Schnittstellen des PCs an. Diese kann mittels des "Refresh" Knopfes aktualisiert werden, falls keine oder nicht die richtige serielle Schnittstelle aufgelistet wird. Falls der Brick nicht als serielle Schnittstelle auftaucht, befindet sich der Brick entweder nicht im Bootloader Modus, oder das Betriebssystem hat ihn nicht richtig als serielle Schnittstelle erkannt:
-
-- Auf **Windows** XP und Vista kann es nötig sein den Atmel Treiber `atm6124_cdc.inf` aus dem `drivers` Unterordner der Brick Viewer Installation zu installieren, damit ein Brick im Bootloader Modus richtig als serielle Schnittstelle erkannt wird. Windows 7, 8, 8.1 und 10 erkennt einen Brick im Bootloader Modus von sich aus als "GPS Camera Detect" oder "Bossa Program Port" Gerät. Dies ist auch eine serielle Schnittstelle so das Flashen dennoch möglich ist.
-- Für **alte Linux** Kernel Versionen kann es notwendig sein diesen [SAM-BA Linux USB Kernel Treiber](http://mail.embedded-it.de/microcontroller/eNet-sam7X.php) zu installieren, damit ein Brick im Bootloader Modus richtig funktioniert.
-- Auf **macOS** kann einen Brick im Bootloader Modus als DVB-T Stick erkannt und automatisch EyeTV oder ein ähnliches Programm gestartet werden. Dann einfach EyeTV schließen und mit dem Flash-Vorgang fortfahren.
-
-Wird die serielle Schnittstelle des Bricks richtig erkannt muss diese nun im Brick Viewer ausgewählt werden, typische Namen sind:
-
-- Windows: "AT91 USB to Serial Converter" oder "GPS Camera Detect" oder "Bossa Program Port"
-- Linux: `/dev/ttyACM0` oder `/dev/ttyUSB0`
-- macOS: `/dev/tty.usbmodemfd131`
-
-#### Flashen
-
-Jetzt noch die richtige Firmware für den Brick auswählen. Passend die Einstellungen kann das Flashen per Klick auf den "Save" Knopf gestartet werden. Die aktuelle Firmware für den Brick wird heruntergeladen, auf den Brick geschrieben und dann wieder zurück gelesen, um sicherzustellen, dass das Schreiben der Firmware richtig funktioniert hat.
-
-Falls das Flashen fehlschlägt, sollte zunächst überprüft werden, ob die richtige serielle Schnittstelle ausgewählt wurde. Wenn Brick Viewer auf Linux "No permission to open serial port" meldet, dann liegt dies normalerweise daran, dass der Nutzer nicht der Gruppe `dialout` angehört. Um dieses Problem zu beheben kann entweder der Nutzer der Gruppe `dialout` hinzugefügt oder Brick Viewer als root gestartet werden (`sudo brickv`).
-
-Anstatt den Brick Viewer die jeweils neuste Firmware herunterladen zu lassen, kann auch "Custom..." als Firmware gewählt werden und dann die zu flashende Firmware als lokale Datei über den "Browse..." Knopf ausgewählt werden.
-
-### Mit brick-flash auf Linux
-
-Brick Viewer benötigt eine graphische Benutzeroberfläche. Falls Bricks an Linux Rechnern ohne graphische Benutzeroberfläche geflasht werden sollen kann `brick-flash` verwendet werden. Es steht als [Debian Packet](https://download.tinkerforge.com/tools/brick_flash/linux/brick-flash_linux_latest.deb) zum Download bereit:
-
-wget --backups=1 <https://download.tinkerforge.com/tools/brick_flash/linux/brick-flash_linux_latest.deb>
-sudo dpkg -i brick-flash_linux_latest.deb
-
-Im Gegensatz zum Brick Viewer lädt `brick-flash` die Firmware nicht automatisch herunter. Die jeweils neusten Firmwares sind [hier](https://www.tinkerforge.com/de/doc/Downloads.html#downloads-brick-firmwares) zu finden. Lade die zu flashende Firmware herunter, z.B. die neuste Master Brick Firmware:
-
-wget --backups=1 <https://download.tinkerforge.com/firmwares/bricks/master/brick_master_firmware_latest.bin>
-
-Stelle sicher, dass sich der Brick im Bootloader Modus befindet (siehe Brick Viewer Abschnitt weiter oben) und bestimme die serielle Schnittstelle des Bricks. Typischerweise ist dies `/dev/ttyACM0` oder `/dev/ttyUSB0`.
-
-Jetzt kann `brick-flash` mit dem Namen der serielle Schnittstelle und dem Dateinamen der Firmware ausgeführt werden:
-
-brick-flash -p /dev/ttyACM0 -f brick_master_firmware_latest.bin
-
-Nach dem Flash-Vorgang startet der Brick automatisch neu und verwendet die neue Firmware.
-
-## Bricklet Plugin Flashing
-
-Der Brick Viewer kann auch Plugins auf Bricklets flashen. Hierfür gibt es die Möglichkeit alle Bricklets auf die neuste Version zu bringen (siehe "Auto-Update All Bricklets" unter [Aktuellen Stand bestimmen](https://www.tinkerforge.com/de/doc/Software/Brickv.html#brickv-auto-update)). Alternativ können Bricklets auch einzeln geflasht werden. Die jeweils neuste Plugin-Version wird dabei automatisch vom Brick Viewer ermittelt und heruntergeladen. Diese können aber auch manuell im [Downloadbereich](https://www.tinkerforge.com/de/doc/Downloads.html#downloads-bricklet-plugins) heruntergeladen werden.
-
-Um ein Bricklet flashen zu können, muss es an einem Brick angeschlossen sein, der im Brick Viewer aufgelistet ist. Ein Klick auf den "Flashing" Knopf im lässt den passenden Dialog erscheinen:
-
-![](res/Pasted%20image%2020230217121503.jpg)
-
-Als nächstes muss der Brick und dessen Port ausgewählt werden, an dem das zu flashende Bricklet angeschlossen ist, sowie das passenden Plugin für das Bricklet. Passend die Einstellungen kann das Flashen per Klick auf den "Save" Knopf gestartet werden. Jetzt wird das aktuelle Plugin für das Bricklet heruntergeladen, auf das Bricklet geschrieben und dann wieder zurück gelesen, um sicherzustellen, dass das Schreiben des Plugin richtig funktioniert hat. Falls das Flashen scheitert, sollte zunächst überprüft werden, ob der richtige Brick und der richtige Port ausgewählt wurde und ob das Bricklet auch richtig angeschlossen ist.
-
-Anstatt den Brick Viewer das jeweils neuste Plugin herunterladen zu lassen, kann auch "Custom..." als Plugin gewählt werden und dann die zu flashende Plugin als lokale Datei über den "Browse..." Knopf ausgewählt werden.
-
-Darüber hinaus kann die UID des Bricklets ausgelesen und auch neu geschrieben werden. Die UID ist Base58 kodiert, die erlaubten Zeichen umfassen 0-9, a-z und A-Z ohne 0 (Null), I (groß i), O (groß o) und l (klein L). Die einzige weitere Einschränkung ist, dass die UIDs aller Bricklets eindeutig sind.
 
 # Tests und implementation marvin
 
