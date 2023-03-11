@@ -1,3 +1,21 @@
+
+
+•Titelblatt
+•Zusammenfassung (Management Summary)
+•Inhaltsverzeichnis
+•Vorwort Warum diese Arbeit, warum dieses Thema
+•Initialisierungsphase (Planungsphase)Projektauftrag, Projektstruktur, Projektabgrenzung, Projektorganisation, Projektplanung, Risikoanalyse, usw.
+•Situationsanalyse (Analyse oder Vorstudie)Grundlagen, Vorstudien, Pflichtenheft
+•Konzept
+•Design
+•Realisierung (Implementation)
+•Test / Auswertung/ Testbericht
+•Einführung (Installation)
+•Schulung/ Bedienungsanleitung
+•Wartung
+•Abschlussberichterreichte Ziele, Schlussfolgerungen, Verbesserungsvorschläge, Schwierigkeiten
+•SchlussteilAusblick, Schlusswort
+•AnhangLiteraturverzeichnis, Quellenangaben, Datenblätter, Demo-Daten, Benutzerhandbuch, usw.Die Gliederung ist, wenn notwendig, entsprechend der Semesterarbeit anzupassen. Die Semesterarbeit be-stimmt den Inhalt und den Umfang des Berichtes.
 ## Raspberry PI Einrichtung
 
 Für die Visuelle demo benötigen wir einen Host. Wir haben uns hier für ein Raspberry PI entschieden, da dieses einfach zu warten ist und wenig Platz benötigt.<br />
