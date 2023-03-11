@@ -1,5 +1,7 @@
 # Titelblatt
+
 # Management Summary
+
 Das Projektziel besteht darin, eine begleitende Projektdokumentation zu erstellen, die Implementierung der Brainfuck Programmiersprache durchzuführen und eine Visualisierung auf einem Embedded Hardware Tinkerforge (OLED Display) zu realisieren. Ein Teil des Projekts beinhaltet auch die Vertiefung der Kenntnisse in der Programmiersprache Java, indem ein Brainfuck-Compiler von Grund auf gebaut wird.
 
 Das Projektteam setzt sich aus Mario Weilenmann und Marvin Huber zusammen. Mario wird sich auf die Entwicklung des Brainfuck-Compilers konzentrieren und dabei den Unterschied zwischen Compiler und Interpreter verstehen. Marvin wird sich auf den Aufbau unterschiedlicher Runtime-Umgebungen konzentrieren.
@@ -11,8 +13,11 @@ Das Projekt birgt auch Risiken, wie technische Schwierigkeiten, zeitliche Einsch
 Das Projekt wurde erfolgreich abgeschlossen und wir sind mit dem Ergebnis zufrieden. Die Implementierung der Brainfuck-Programmiersprache und die Visualisierung auf dem Tinkerforge wurden erfolgreich umgesetzt und erfüllten unsere Erwartungen.
 
 Insgesamt haben wir wertvolle Erfahrungen gesammelt und unsere Programmierkenntnisse erweitert. Wir empfehlen, die gewonnenen Erkenntnisse und Fähigkeiten in zukünftigen Projekten zu nutzen und weiterzuentwickeln.
+
 # Inhaltsverzeichnis
+
 # Vorwort
+
 Wieso wir das Thema gewählt haben, einen Brainfuck-Compiler zu schreiben, ist für uns eine faszinierende Herausforderung. Brainfuck ist eine sehr einfache, aber auch sehr abstrakte Programmiersprache, die nur aus acht Befehlen besteht und aufgrund ihrer minimalistischen Natur sehr schwierig zu lesen und zu schreiben ist.
 
 Ein Brainfuck-Compiler ist ein Programm, das geschrieben wurde, um Brainfuck-Code in eine ausführbare Form zu übersetzen, die von einer Maschine verstanden werden kann. Ein Brainfuck-Compiler zu schreiben ist für uns aus folgenden Gründen interessant:
@@ -24,7 +29,9 @@ Zweitens kann es für die Forschung in der theoretischen Informatik von Nutzen s
 Drittens kann es einfach aus Gründen der Unterhaltung sein. Wir haben ein grosses intresses an spannend Informatik Theman, finden es einfach faszinierend, mit Brainfuck zu arbeiten und zu sehen, wie sich komplexe Algorithmen mit nur wenigen Befehlen schreiben lassen.
 
 Es bietet die Möglichkeit, Programmierkenntnisse zu verbessern, theoretische Konzepte zu erforschen und sich einfach mit einer faszinierenden Programmiersprache zu beschäftigen. Insgesamt ist das Schreiben eines Brainfuck-Compilers eine herausfordernde und interessante Aufgabe, die wir uns Stellen möchten aufgrund von den oberen genannten Gründen, deswegen haben wir uns entschieden dafür.
+
 # Initialisierungsphase
+
 ## Ausgangslage
 
 Die Ausgangslage für die Projektarbeit besteht darin, dass wir über limitierte Java-Kenntnisse verfügen und diese gerne erweitern möchten. Dies ist ein wichtiger Aspekt, da die Programmiersprache Java eine der am häufigsten verwendeten Programmiersprachen ist und in vielen Bereichen der Softwareentwicklung eingesetzt wird.
@@ -45,29 +52,27 @@ Dieses Projekt zielt darauf ab, eine begleitende Projektdokumentation zu erstell
 
 Ziele im Detail:
 
-1.  Erstellung einer begleitenden Projektdokumentation: Es wird eine detaillierte Projektdokumentation erstellt, die den Entwicklungsprozess, die Implementierung und die Ergebnisse des Projekts beschreibt. Die Dokumentation umfasst auch Anweisungen und Anleitungen für die Implementierung des Brainfuck Compilers und die Visualisierung der Programmiersprache auf der Embedded Hardware Tinkerforge (OLED Display).
-    
-2.  Implementierung von Brainfuck Programmiersprache: Ein wesentliches Ziel des Projekts besteht darin, die Programmiersprache Brainfuck zu implementieren. Dies beinhaltet die Entwicklung eines Brainfuck Compilers von Grund auf, um sicherzustellen, dass das Verständnis für Java und Brainfuck vertieft wird. Wir werden auch sicherstellen, dass wir die Unterschiede zwischen Compiler und Interpreter verstehen und in der Lage sind, diese zu erklären.
-    
-3.  Visualisierung an Embedded Hardware Tinkerforge (OLED Display): Ein weiteres Ziel des Projekts ist es, die Brainfuck Programmiersprache auf einer Embedded Hardware Tinkerforge (OLED Display) zu visualisieren. Dies beinhaltet die Entwicklung einer Runtime-Umgebung, um sicherzustellen, dass die Programmiersprache auf der Hardware effektiv und effizient dargestellt wird. Marvin wird sich auf die Entwicklung von verschiedenen Runtime-Umgebungen konzentrieren, um sicherzustellen, dass die Visualisierung der Programmiersprache auf der Hardware optimal ist.
-    
+1. Erstellung einer begleitenden Projektdokumentation: Es wird eine detaillierte Projektdokumentation erstellt, die den Entwicklungsprozess, die Implementierung und die Ergebnisse des Projekts beschreibt. Die Dokumentation umfasst auch Anweisungen und Anleitungen für die Implementierung des Brainfuck Compilers und die Visualisierung der Programmiersprache auf der Embedded Hardware Tinkerforge (OLED Display).
+
+2. Implementierung von Brainfuck Programmiersprache: Ein wesentliches Ziel des Projekts besteht darin, die Programmiersprache Brainfuck zu implementieren. Dies beinhaltet die Entwicklung eines Brainfuck Compilers von Grund auf, um sicherzustellen, dass das Verständnis für Java und Brainfuck vertieft wird. Wir werden auch sicherstellen, dass wir die Unterschiede zwischen Compiler und Interpreter verstehen und in der Lage sind, diese zu erklären.
+
+3. Visualisierung an Embedded Hardware Tinkerforge (OLED Display): Ein weiteres Ziel des Projekts ist es, die Brainfuck Programmiersprache auf einer Embedded Hardware Tinkerforge (OLED Display) zu visualisieren. Dies beinhaltet die Entwicklung einer Runtime-Umgebung, um sicherzustellen, dass die Programmiersprache auf der Hardware effektiv und effizient dargestellt wird. Marvin wird sich auf die Entwicklung von verschiedenen Runtime-Umgebungen konzentrieren, um sicherzustellen, dass die Visualisierung der Programmiersprache auf der Hardware optimal ist.
 
 Zusätzliche Ziele:
 
-1.  Vertiefung des Verständnisses von Java: Die Entwicklung des Brainfuck Compilers von Grund auf bietet eine hervorragende Gelegenheit, unser Verständnis von Java zu vertiefen. Wir werden sicherstellen, dass wir ein tiefes Verständnis der Programmiersprache Java haben und in der Lage sind, effektiv damit zu arbeiten.
-    
-2.  Vertiefung des Verständnisses von Brainfuck: Die Implementierung der Brainfuck Programmiersprache bietet eine hervorragende Gelegenheit, unser Verständnis von Brainfuck zu vertiefen. Wir werden sicherstellen, dass wir ein tiefes Verständnis der Programmiersprache haben und in der Lage sind, effektiv damit zu arbeiten.
-    
-3.  Entwicklung von systematischen Abläufen: Ein wichtiger Teil des Projekts ist die Entwicklung von systematischen Abläufen beim Erstellen von Codes. Wir werden sicherstellen, dass wir die besten Praktiken bei der Entwicklung von Codes einsetzen, um die Qualität unserer Arbeit zu verbessern.
-    
-4.   Verbesserung der Zusammenarbeit: Ein weiteres Ziel des Projekts besteht darin, unsere Zusammenarbeit zu verbessern. Wir werden uns gegenseitig beraten und unterstützen, um sicherzustellen, dass jeder von uns das Projekt erfolgreich abschließen kann. Wir werden auch sicherstellen, dass wir effektive Kommunikationswege etablieren, um sicherzustellen, dass wir uns während des gesamten Projekts auf dem gleichen Stand halten.
-    
-5.  Verbesserung der technischen Fähigkeiten: Dieses Projekt bietet uns eine hervorragende Gelegenheit, unsere technischen Fähigkeiten zu verbessern. Wir werden sicherstellen, dass wir unser Verständnis von Java, Brainfuck und Embedded Hardware Tinkerforge (OLED Display) vertiefen und unsere Fähigkeiten in der Programmierung und Implementierung von Codes verbessern.
-    
+1. Vertiefung des Verständnisses von Java: Die Entwicklung des Brainfuck Compilers von Grund auf bietet eine hervorragende Gelegenheit, unser Verständnis von Java zu vertiefen. Wir werden sicherstellen, dass wir ein tiefes Verständnis der Programmiersprache Java haben und in der Lage sind, effektiv damit zu arbeiten.
+
+2. Vertiefung des Verständnisses von Brainfuck: Die Implementierung der Brainfuck Programmiersprache bietet eine hervorragende Gelegenheit, unser Verständnis von Brainfuck zu vertiefen. Wir werden sicherstellen, dass wir ein tiefes Verständnis der Programmiersprache haben und in der Lage sind, effektiv damit zu arbeiten.
+
+3. Entwicklung von systematischen Abläufen: Ein wichtiger Teil des Projekts ist die Entwicklung von systematischen Abläufen beim Erstellen von Codes. Wir werden sicherstellen, dass wir die besten Praktiken bei der Entwicklung von Codes einsetzen, um die Qualität unserer Arbeit zu verbessern.
+
+4. Verbesserung der Zusammenarbeit: Ein weiteres Ziel des Projekts besteht darin, unsere Zusammenarbeit zu verbessern. Wir werden uns gegenseitig beraten und unterstützen, um sicherzustellen, dass jeder von uns das Projekt erfolgreich abschließen kann. Wir werden auch sicherstellen, dass wir effektive Kommunikationswege etablieren, um sicherzustellen, dass wir uns während des gesamten Projekts auf dem gleichen Stand halten.
+
+5. Verbesserung der technischen Fähigkeiten: Dieses Projekt bietet uns eine hervorragende Gelegenheit, unsere technischen Fähigkeiten zu verbessern. Wir werden sicherstellen, dass wir unser Verständnis von Java, Brainfuck und Embedded Hardware Tinkerforge (OLED Display) vertiefen und unsere Fähigkeiten in der Programmierung und Implementierung von Codes verbessern.
 
 Projektbeteiligte:
 
-Mario Weilenmann: Mario ist verantwortlich für die Entwicklung des Brainfuck Compilers und die Implementierung der Programmiersprache auf der Embedded Hardware Tinkerforge (OLED Display). 
+Mario Weilenmann: Mario ist verantwortlich für die Entwicklung des Brainfuck Compilers und die Implementierung der Programmiersprache auf der Embedded Hardware Tinkerforge (OLED Display).
 
 Marvin Huber: Marvin wird sich auf die Entwicklung von verschiedenen Runtime-Umgebungen konzentrieren, um sicherzustellen, dass die Visualisierung der Programmiersprache auf der Embedded Hardware Tinkerforge (OLED Display) optimal ist. Er wird auch Mario bei der Entwicklung des Brainfuck Compilers unterstützen und sicherstellen, dass der Code effektiv und effizient implementiert wird.
 
@@ -84,18 +89,18 @@ Wir werden in diesem Projekt grundlegende Programmierkonzepte wie Variablen, Sch
 Es ist jedoch wichtig zu betonen, dass das Projekt nicht den Anspruch hat, zur Produktionsreife zu gelangen. Das bedeutet, dass das Ziel des Projekts nicht darin besteht, ein voll funktionsfähiges Produkt zu entwickeln, das von anderen genutzt werden kann. Stattdessen soll uns das Projekt die Möglichkeit geben, grundlegende Konzepte der Programmierung zu erlernen und anzuwenden und uns iJava-programming voran zu bringen.
 
 # Risikoanalyse
+
 Eine Risikoanalyse ist eine wichtige Komponente bei der Planung eines Projekts, um potenzielle Risiken zu identifizieren und Strategien zu entwickeln, um diese Risiken zu minimieren oder zu vermeiden. Im Folgenden sind einige Risiken aufgeführt, die bei der Entwicklung des Brainfuck Compilers und der Visualisierung der Programmiersprache auf der Embedded Hardware Tinkerforge (OLED Display) auftreten könnten:
 
-1.  Technische Schwierigkeiten: Das Projekt erfordert ein tiefes Verständnis von Java, Brainfuck und Embedded Hardware Tinkerforge (OLED Display). Es besteht das Risiko, dass technische Schwierigkeiten auftreten können, die das Projekt verzögern oder sogar unmöglich machen können. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir eine gründliche Forschung und Vorbereitung durchführen und dass wir in der Lage sind, die technischen Herausforderungen effektiv zu bewältigen.
-    
-2.  Zeitliche Einschränkungen: Das Projekt hat einen relativ kleinen Zeitrahmen, innerhalb dessen das Projekt abgeschlossen werden muss. Es besteht das Risiko, dass wir aufgrund von unvorhergesehenen Schwierigkeiten oder Komplikationen den Zeitrahmen nicht einhalten können. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir realistische Zeitpläne erstellen und dass wir unser Bestes tun, um innerhalb dieser Zeitpläne zu arbeiten.
-    
-3.  Mangelnde Zusammenarbeit: Das Projekt erfordert eine enge Zusammenarbeit zwischen den Projektbeteiligten. Es besteht das Risiko, dass wir nicht effektiv zusammenarbeiten können, was zu Verzögerungen oder Problemen im Projekt führen kann. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir effektive Kommunikationswege etablieren und dass wir uns regelmäßig treffen, (fast jedes Wochenende) um den Fortschritt des Projekts zu besprechen.
-    
-4.  Finanzielle Einschränkungen: Das Projekt erfordert möglicherweise finanzielle Ressourcen für die Beschaffung von Materialien oder für die Anmietung von Räumlichkeiten. Es besteht das Risiko, dass das Projekt aufgrund von finanziellen Einschränkungen gestoppt oder verzögert wird. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir realistische Budgets erstellen und dass wir alternative Finanzierungsoptionen prüfen, falls nötig.
-    
-5.  Fehlende Erfahrung: Es besteht das Risiko, dass wir möglicherweise nicht über ausreichende Erfahrung in der Programmierung oder Implementierung von Codes verfügen, um das Projekt erfolgreich abzuschließen. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir uns gegenseitig unterstützen und dass wir uns regelmäßig schulen und weiterbilden, um unsere technischen Fähigkeiten zu verbessern.
-    
+1. Technische Schwierigkeiten: Das Projekt erfordert ein tiefes Verständnis von Java, Brainfuck und Embedded Hardware Tinkerforge (OLED Display). Es besteht das Risiko, dass technische Schwierigkeiten auftreten können, die das Projekt verzögern oder sogar unmöglich machen können. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir eine gründliche Forschung und Vorbereitung durchführen und dass wir in der Lage sind, die technischen Herausforderungen effektiv zu bewältigen.
+
+2. Zeitliche Einschränkungen: Das Projekt hat einen relativ kleinen Zeitrahmen, innerhalb dessen das Projekt abgeschlossen werden muss. Es besteht das Risiko, dass wir aufgrund von unvorhergesehenen Schwierigkeiten oder Komplikationen den Zeitrahmen nicht einhalten können. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir realistische Zeitpläne erstellen und dass wir unser Bestes tun, um innerhalb dieser Zeitpläne zu arbeiten.
+
+3. Mangelnde Zusammenarbeit: Das Projekt erfordert eine enge Zusammenarbeit zwischen den Projektbeteiligten. Es besteht das Risiko, dass wir nicht effektiv zusammenarbeiten können, was zu Verzögerungen oder Problemen im Projekt führen kann. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir effektive Kommunikationswege etablieren und dass wir uns regelmäßig treffen, (fast jedes Wochenende) um den Fortschritt des Projekts zu besprechen.
+
+4. Finanzielle Einschränkungen: Das Projekt erfordert möglicherweise finanzielle Ressourcen für die Beschaffung von Materialien oder für die Anmietung von Räumlichkeiten. Es besteht das Risiko, dass das Projekt aufgrund von finanziellen Einschränkungen gestoppt oder verzögert wird. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir realistische Budgets erstellen und dass wir alternative Finanzierungsoptionen prüfen, falls nötig.
+
+5. Fehlende Erfahrung: Es besteht das Risiko, dass wir möglicherweise nicht über ausreichende Erfahrung in der Programmierung oder Implementierung von Codes verfügen, um das Projekt erfolgreich abzuschließen. Um dieses Risiko zu minimieren, werden wir sicherstellen, dass wir uns gegenseitig unterstützen und dass wir uns regelmäßig schulen und weiterbilden, um unsere technischen Fähigkeiten zu verbessern.
 
 Zusammenfassend kann gesagt werden, dass das Projekt einige Risiken birgt. Wir werden jedoch sicherstellen, dass wir diese Risiken im Auge behalten und dass wir Strategien entwickeln, um diese Risiken zu minimieren oder zu vermeiden. Wir sind zuversichtlich, dass wir das Projekt erfolgreich abschließen werden und dass wir die gesteckten Ziele erreichen werden.
 
@@ -110,6 +115,7 @@ Zusammenfassend kann gesagt werden, dass das Projekt einige Risiken birgt. Wir w
 | Fehlende Erfahrung         | Hoch                       | Leicht-Mittel        | Selbststudium, gegenseitige Unterstützung und Mentoring, um sicherzustellen, dass das Team über ausreichende Fähigkeiten verfügt. Profitierung von Marvins kenntnissen. |
 
 # Pflichtenheft
+
 | Mario                                          | Marvin                                            |
 | ---------------------------------------------- | ------------------------------------------------- |
 | Erstellen der Tabelle und Meilenstein Daten    | Vorbereitung des Programmkonzeptes                |
@@ -125,15 +131,16 @@ Zusammenfassend kann gesagt werden, dass das Projekt einige Risiken birgt. Wir w
 | Dokumentation Java Code                        | Dokumentation Brainfuck und Rust                   |
 
 # Projektplan
-1.	Konzeption (Benötigte Komponenten, Aufbau, Vorgehen)  
-2.	Versuchsaufbau mit Tinkerforge (Red Brick, OLED Display) 
-3.	Programmierung von Interpreter und Compilier 
-(Auslesung und Speicherung der Daten) 
-4.	Entwicklung der Darstellung von Output 
-5.	(Visualisierung der Daten) 
-6.	Finalisierung der Dokumentation 
 
-# Meilensteine 
+1. Konzeption (Benötigte Komponenten, Aufbau, Vorgehen)  
+2. Versuchsaufbau mit Tinkerforge (Red Brick, OLED Display)
+3. Programmierung von Interpreter und Compilier
+(Auslesung und Speicherung der Daten)
+4. Entwicklung der Darstellung von Output
+5. (Visualisierung der Daten)
+6. Finalisierung der Dokumentation
+
+# Meilensteine
 
 | Meilensteine                                              | Ziel der Fertigstellung | Fertiggestellt am |
 | --------------------------------------------------------- | ----------------------- | ----------------- |
@@ -162,8 +169,8 @@ Zusammenfassend kann gesagt werden, dass das Projekt einige Risiken birgt. Wir w
 | 11.03.2023 | - Code Cleanup, Finishing Touch <br> - Dokumentation Raspberry PI Setup <br> - Layout Anpassungen <br> - Dokumentation Code                                    | MV, MA|
 | 12.03.2023 | - Dokumentationserweiterungen                                                                                                                                  | MV, MA|
 
-
 # Installationsanleitung
+
 ## Technische Dokumentation
 
 ## Raspberry PI Einrichtung
@@ -205,16 +212,16 @@ Einstellungen mit ``Ctrl + o`` schreiben und den Editor mit ``Ctrl + x`` verlass
 
 `sudo reboot`
 
-## Brick Hat 
+## Brick Hat
 
 ## Features
 
--   Raspberry Pi HAT im Standard-HAT-Formfaktor
--   **Acht** Anschlüsse für Bricklets
--   Integrierte 5,3V Stromversorgung (6V-28V Eingang, bis zu 4A)
--   Misst USB- und DC-Spannungsversorgung
--   Bietet eine Real-Time Clock für den Raspberry Pi
--   Bietet Schlafmodus (Low Power) und Watchdog
+- Raspberry Pi HAT im Standard-HAT-Formfaktor
+- **Acht** Anschlüsse für Bricklets
+- Integrierte 5,3V Stromversorgung (6V-28V Eingang, bis zu 4A)
+- Misst USB- und DC-Spannungsversorgung
+- Bietet eine Real-Time Clock für den Raspberry Pi
+- Bietet Schlafmodus (Low Power) und Watchdog
 
 ## Beschreibung
 
@@ -244,13 +251,12 @@ Der HAT Brick ist elektronisch kompatibel zu den Raspberry Pis 2B, 3B, 3B+, 4B, 
 | Abmessungen (B x T x H)              | 65 x 56 x 25mm (2,56 x 2,20 x 0,98")           |
 | Gewicht                               | 30g                                            |
 
-
 ## Ressourcen
 
--   Schaltplan ([Download](https://github.com/Tinkerforge/hat-brick/raw/master/hardware/hat-schematic.pdf))
--   Umriss und Bohrplan ([Download](https://www.tinkerforge.com/de/doc/_images/Dimensions/hat_brick_dimensions.png))
--   Quelltexte und Platinenlayout ([Download](https://github.com/Tinkerforge/hat-brick/zipball/master))
--   3D Modell ([Online ansehen](https://autode.sk/2XiDCDT) | Download: [STEP](https://download.tinkerforge.com/3d/bricks/hat/hat.step), [FreeCAD](https://download.tinkerforge.com/3d/bricks/hat/hat.FCStd))
+- Schaltplan ([Download](https://github.com/Tinkerforge/hat-brick/raw/master/hardware/hat-schematic.pdf))
+- Umriss und Bohrplan ([Download](https://www.tinkerforge.com/de/doc/_images/Dimensions/hat_brick_dimensions.png))
+- Quelltexte und Platinenlayout ([Download](https://github.com/Tinkerforge/hat-brick/zipball/master))
+- 3D Modell ([Online ansehen](https://autode.sk/2XiDCDT) | Download: [STEP](https://download.tinkerforge.com/3d/bricks/hat/hat.step), [FreeCAD](https://download.tinkerforge.com/3d/bricks/hat/hat.FCStd))
 
 ## Erste Schritte
 
@@ -259,6 +265,7 @@ Der HAT Brick ist elektronisch kompatibel zu den Raspberry Pis 2B, 3B, 3B+, 4B, 
 Um den HAT Brick verwenden zu können, muss zuerst der [Brick Daemon](https://www.tinkerforge.com/de/doc/Software/Brickd.html#brickd) auf dem Raspberry Pi installiert werden. Der Brick Daemon agiert als Proxy zwischen den Brickletanschlüssen des HAT Brickss und den API Bindings. Er kümmert sich auch um die Real-Time Clock.
 
 ### Interface
+
 Es wird ein Interface verwendet mit dem Namen "Brick Viewer" für eine visuelle veranschaulichung.
 Der Brick Viewer kann entweder direkt auf dem Raspberry Pi oder auf einem externen PC, der über Ethernet oder WLAN Zugriff auf den Raspberry Pi besitzt, installiert werden. Von einem externen PC aus muss sich auf den Hostnamen oder die IP des Raspberry Pis verbunden werden, vom Raspberry Pi aus auf localhost.
 
@@ -276,8 +283,8 @@ Zusätzlich ist es möglich den PC auf dem der Brick Daemon läuft von dem PC au
 
 # Brick Daemon Installation auf Linux
 
-
 ## Installation
+
 **Voraussetzungen**: libusb 1.0.6 oder neuer
 
 Der [Brick Daemon](https://www.tinkerforge.com/de/doc/Software/Brickd.html#brickd) kann auf einer Debian basierten Distribution (Ubuntu, Mint, etc.) aus einer `.deb` Datei installiert werden. Für Arch Linux steht im AUR das Paket [brickd](https://aur.archlinux.org/packages/brickd/) zur Verfügung. Auf anderen Distributionen kann der Brick Daemon aus dem Quelltext installiert werden.
@@ -312,49 +319,45 @@ Fertig:
 
 Standardmäßig loggt Brick Daemon Nachrichten über Informationen, Warnungen und Fehler. Diese beinhalten auch Informationen über USB Hotplug und TCP/IP Verbindungen.
 
--   Linux und macOS: Nachrichten werden in diesem Log-Datei geschrieben:
-    
+- Linux und macOS: Nachrichten werden in diesem Log-Datei geschrieben:
+
     `/var/log/brickd.log`
-    
--   Windows: Nachrichten werden einer Log-Datei namens `brickd.log` im Brick Daemon Data-Verzeichnis gespeichert:
-    
-    -   Windows XP:
-        
+
+- Windows: Nachrichten werden einer Log-Datei namens `brickd.log` im Brick Daemon Data-Verzeichnis gespeichert:
+
+  - Windows XP:
+
         `C:\Dokumente und Einstellungen\All Users\Application Data\Tinkerforge\Brickd\brickd.log`
-        
-    -   Windows Vista oder neuer:
-        
+
+  - Windows Vista oder neuer:
+
         `C:\ProgramData\Tinkerforge\Brickd\brickd.log`
-        
-    
+
     Das `logviewer.exe` Tool (Teil der brickd Installation) kann diese Log-Datei anzeigen und beinhaltet auch eine Live Log Ansicht.
-    
 
 Falls der Standard Logging Einstellung nicht genug Details ausgibt, um ein Problem debuggen zu können, dann kann das Debug Log Level aktiviert werden. Dies ist standardmäßig nicht aktiviert, da es die Menge der ausgegebenen Log-Nachrichten stark erhöht, so dass es einen Einfluss auf den Nachrichtendurchsatz von brickd haben kann.
 
--   Windows: Das `logviewer.exe` Tool stellt ebenfalls Live Log Ansicht bereit, die auf Debug Level gestellt werden kann.
+- Windows: Das `logviewer.exe` Tool stellt ebenfalls Live Log Ansicht bereit, die auf Debug Level gestellt werden kann.
 
 ## Konfiguration
 
 Brick Daemon verwendet eine Konfigurationsdatei mit Schlüssel-Wert Format:
 
--   Linux und macOS: Die Konfigurationsdatei heißt `brickd.conf` und ist hier gespeichert:
-    
-    `/etc/brickd.conf`
-    
--   Windows: Die Konfigurationsdatei heißt `brickd.ini` und ist im Brick Daemon Data-Verzeichnis gespeichert:
-    
-    -   Windows XP:
-        
-        `C:\Dokumente und Einstellungen\All Users\Application Data\Tinkerforge\Brickd\brickd.ini`
-        
-    -   Windows Vista oder neuer:
-        
-       ` C:\ProgramData\Tinkerforge\Brickd\brickd.ini`
-        
-    
-    Das `logviewer.exe` Tool (Teil der brickd Installation) kann diese Konfigurationsdatei bearbeiten.
+- Linux und macOS: Die Konfigurationsdatei heißt `brickd.conf` und ist hier gespeichert:
 
+    `/etc/brickd.conf`
+
+- Windows: Die Konfigurationsdatei heißt `brickd.ini` und ist im Brick Daemon Data-Verzeichnis gespeichert:
+
+  - Windows XP:
+
+        `C:\Dokumente und Einstellungen\All Users\Application Data\Tinkerforge\Brickd\brickd.ini`
+
+  - Windows Vista oder neuer:
+
+       `C:\ProgramData\Tinkerforge\Brickd\brickd.ini`
+
+    Das `logviewer.exe` Tool (Teil der brickd Installation) kann diese Konfigurationsdatei bearbeiten.
 
 ### WebSockets
 
@@ -382,29 +385,30 @@ Danach muss Brick Daemon neugestartet werden, um die Änderungen an der Konfigur
 
 Seit Brick Daemon Version 1.0.8 ist es möglich die aktuell installierte Brick Daemon Version zu erfragen. Dafür unterstützt der Brick Daemon den Kommandozeilenparameter --version:
 
--   Linux:
-    
+- Linux:
+
     `brickd --version`
-    
--   Windows XP:
-    
+
+- Windows XP:
+
     `"C:\Programme\Tinkerforge\Brickd\brickd.exe" --version`
-    
--   Windows Vista oder neuer:
-    
+
+- Windows Vista oder neuer:
+
     `"C:\Programme (x86)\Tinkerforge\Brickd\brickd.exe" --version`
-    
--   macOS (bis Brick Daemon 2.2.1):
-    
+
+- macOS (bis Brick Daemon 2.2.1):
+
     `/usr/libexec/brickd.app/Contents/MacOS/brickd --version`
-    
--   macOS (seit Brick Daemon 2.2.2):
-    
-   ` /usr/local/libexec/brickd.app/Contents/MacOS/brickd --version`
+
+- macOS (seit Brick Daemon 2.2.2):
+
+   `/usr/local/libexec/brickd.app/Contents/MacOS/brickd --version`
 
 ## Brick Viewer installation
 
 ### Linux Installation
+
 **Voraussetzungen**: Python 3.5 und PyQt 5.5 mit QtOpenGL oder neuer
 
 Der [Brick Viewer](https://www.tinkerforge.com/de/doc/Software/Brickv.html#brickv) kann auf einer Debian basierten Distribution (Ubuntu, Mint, etc.) aus einer `.deb` Datei installiert werden. Für Arch Linux steht im AUR das Paket [brickv](https://aur.archlinux.org/packages/brickv/) zur Verfügung. Auf anderen Distributionen kann der Brick Viewer aus seinem Quelltext installiert werden.
@@ -451,12 +455,12 @@ sudo dpkg -i brickv_linux_latest.deb`
 
 Um den Brick Viewer aus dem Quelltext heraus zu verwenden kann der Quelltext ebenfalls im [Downloadbereich](https://www.tinkerforge.com/de/doc/Downloads.html#downloads-tools) heruntergeladen werden. Auch hier müssen die benötigten Abhängigkeiten installiert werden:
 
--   python3 (>= 3.5)
--   python3-pyqt5 (>= 5.5)
--   python3-pyqt5.qtopengl
--   python3-serial
--   python3-tz
--   python3-tzlocal
+- python3 (>= 3.5)
+- python3-pyqt5 (>= 5.5)
+- python3-pyqt5.qtopengl
+- python3-serial
+- python3-tz
+- python3-tzlocal
 
 Auf Debian basierte Distributionen können diese Pakete wie zuvor per `apt-get` installiert werden. Für andere Distributionen sollte es äquivalente Pakete geben:
 
@@ -476,9 +480,9 @@ Die auf der [Download Seite](https://www.tinkerforge.com/de/doc/Downloads.html#
 
 Aktuell werden folgende Distributionen und Architekturen unterstützt:
 
--   [Debian](https://www.debian.org/): amd64, i386, armhf, arm64
--   [Ubuntu](https://ubuntu.com/): amd64, i386, armhf, arm64
--   [Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (ehemals Raspbian): armhf
+- [Debian](https://www.debian.org/): amd64, i386, armhf, arm64
+- [Ubuntu](https://ubuntu.com/): amd64, i386, armhf, arm64
+- [Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (ehemals Raspbian): armhf
 
 ## Einrichtung
 
@@ -498,23 +502,22 @@ Aktuell werden folgende Distributionen und Architekturen unterstützt:
 
 Aktuell sind folgende Pakete verfügbar:
 
--   Tools
-    -   [Brick Daemon](https://www.tinkerforge.com/de/doc/Software/Brickd.html#brickd): `brickd`
-    -   [Brick Viewer](https://www.tinkerforge.com/de/doc/Software/Brickv.html#brickv): `brickv`
-    -   [Brick Flash](https://www.tinkerforge.com/de/doc/Software/Brickv.html#brick-flash): `brick-flash`
--   API Bindings
-    -   [Go](https://www.tinkerforge.com/de/doc/Software/API_Bindings_Go.html#api-bindings-go): `golang-tinkerforge-dev`
-    -   [Java](https://www.tinkerforge.com/de/doc/Software/API_Bindings_Java.html#api-bindings-java): `libtinkerforge-java` und `libtinkerforge-java-doc`
-    -   [JavaScript (Node.js)](https://www.tinkerforge.com/de/doc/Software/API_Bindings_JavaScript.html#api-bindings-javascript): `node-tinkerforge`
-    -   JSON: `tinkerforge-json`
-    -   [MQTT](https://www.tinkerforge.com/de/doc/Software/API_Bindings_MQTT.html#api-bindings-mqtt): `tinkerforge-mqtt`
-    -   [Octave](https://www.tinkerforge.com/de/doc/Software/API_Bindings_MATLAB.html#api-bindings-matlab): `octave-tinkerforge`
-    -   [Perl](https://www.tinkerforge.com/de/doc/Software/API_Bindings_Perl.html#api-bindings-perl): `libtinkerforge-perl`
-    -   [PHP](https://www.tinkerforge.com/de/doc/Software/API_Bindings_PHP.html#api-bindings-php): `php-tinkerforge`
-    -   [Python](https://www.tinkerforge.com/de/doc/Software/API_Bindings_Python.html#api-bindings-python): `python3-tinkerforge` (Python 3) und `python-tinkerforge` (Python 2)
-    -   [Ruby](https://www.tinkerforge.com/de/doc/Software/API_Bindings_Perl.html#api-bindings-perl): `ruby-tinkerforge`
-    -   [Shell](https://www.tinkerforge.com/de/doc/Software/API_Bindings_Shell.html#api-bindings-shell): `tinkerforge-shell`
-
+- Tools
+  - [Brick Daemon](https://www.tinkerforge.com/de/doc/Software/Brickd.html#brickd): `brickd`
+  - [Brick Viewer](https://www.tinkerforge.com/de/doc/Software/Brickv.html#brickv): `brickv`
+  - [Brick Flash](https://www.tinkerforge.com/de/doc/Software/Brickv.html#brick-flash): `brick-flash`
+- API Bindings
+  - [Go](https://www.tinkerforge.com/de/doc/Software/API_Bindings_Go.html#api-bindings-go): `golang-tinkerforge-dev`
+  - [Java](https://www.tinkerforge.com/de/doc/Software/API_Bindings_Java.html#api-bindings-java): `libtinkerforge-java` und `libtinkerforge-java-doc`
+  - [JavaScript (Node.js)](https://www.tinkerforge.com/de/doc/Software/API_Bindings_JavaScript.html#api-bindings-javascript): `node-tinkerforge`
+  - JSON: `tinkerforge-json`
+  - [MQTT](https://www.tinkerforge.com/de/doc/Software/API_Bindings_MQTT.html#api-bindings-mqtt): `tinkerforge-mqtt`
+  - [Octave](https://www.tinkerforge.com/de/doc/Software/API_Bindings_MATLAB.html#api-bindings-matlab): `octave-tinkerforge`
+  - [Perl](https://www.tinkerforge.com/de/doc/Software/API_Bindings_Perl.html#api-bindings-perl): `libtinkerforge-perl`
+  - [PHP](https://www.tinkerforge.com/de/doc/Software/API_Bindings_PHP.html#api-bindings-php): `php-tinkerforge`
+  - [Python](https://www.tinkerforge.com/de/doc/Software/API_Bindings_Python.html#api-bindings-python): `python3-tinkerforge` (Python 3) und `python-tinkerforge` (Python 2)
+  - [Ruby](https://www.tinkerforge.com/de/doc/Software/API_Bindings_Perl.html#api-bindings-perl): `ruby-tinkerforge`
+  - [Shell](https://www.tinkerforge.com/de/doc/Software/API_Bindings_Shell.html#api-bindings-shell): `tinkerforge-shell`
 
 ## Übersicht Brick Viewer
 
@@ -552,17 +555,17 @@ Seit Version 1.1.0 kann der Brick Viewer Firmwares auf Bricks flashen. Die jewei
 
 Um einen Brick flashen zu können, muss dieser per USB zu einem PC mit Brick Viewer verbunden sein. Abhängig vom Typ des Brick ist noch Folgendes zu beachten:
 
--   Bevor ein **IMU Brick (1.0)** neu geflasht wird sollte dessen Kalibrierung exportiert werden, da diese beim Flashen verloren geht. Dies ist allerdings nur dann notwendig, falls eine eigenen Kalibrierung vorgenommen wurde, da die Werkskalibrierung seit Brick Viewer Version 1.1.13 automatisch wiederhergestellt werden kann.
--   Die Hardware Version 2.0 des **Master Bricks** hat eine Änderung im Leiterplattenlayout, die den Bootloader Modus stört, wenn eine Master Extension wie WIFI, RS485 oder Ethernet im Stack vorhanden ist. In diesem Fall muss die Master Extension aus dem Stack entfernt werden, damit der Bootloader Modus richtig funktioniert. Diese Problem wurde in Hardware Version 2.1 korrigiert.
+- Bevor ein **IMU Brick (1.0)** neu geflasht wird sollte dessen Kalibrierung exportiert werden, da diese beim Flashen verloren geht. Dies ist allerdings nur dann notwendig, falls eine eigenen Kalibrierung vorgenommen wurde, da die Werkskalibrierung seit Brick Viewer Version 1.1.13 automatisch wiederhergestellt werden kann.
+- Die Hardware Version 2.0 des **Master Bricks** hat eine Änderung im Leiterplattenlayout, die den Bootloader Modus stört, wenn eine Master Extension wie WIFI, RS485 oder Ethernet im Stack vorhanden ist. In diesem Fall muss die Master Extension aus dem Stack entfernt werden, damit der Bootloader Modus richtig funktioniert. Diese Problem wurde in Hardware Version 2.1 korrigiert.
 
 Zum Flashen einer neuen Firmware muss der Brick in den Bootloader Modus versetzt werden. Der **ESP32 Brick** und **ESP32 Ethernet Brick** werden dazu einfach per USB an den PC angeschlossen.
 
 Für alle anderen 4x4cm Brick müssen dazu folgende Schritte durchgeführt:
 
-1.  Brick per USB an PC anschließen.
-2.  Erase Knopf drücken und gedrückt halten.
-3.  Reset Knopf drücken und wieder loslassen.
-4.  Erase Knopf wieder loslassen.
+1. Brick per USB an PC anschließen.
+2. Erase Knopf drücken und gedrückt halten.
+3. Reset Knopf drücken und wieder loslassen.
+4. Erase Knopf wieder loslassen.
 
 Jetzt sollten alle LEDs am 4x4cm Brick aus sein, der Brick sich im Bootloader Modus befinden und am PC sollte eine neue seriellen Schnittstelle auftauchen.
 
@@ -574,15 +577,15 @@ Als nächstes muss der Brick Viewer gestartet und der "Updates / Flashing" Dialo
 
 Die "Serial Port" Dropdown-Box zeigt alle verfügbaren seriellen Schnittstellen des PCs an. Diese kann mittels des "Refresh" Knopfes aktualisiert werden, falls keine oder nicht die richtige serielle Schnittstelle aufgelistet wird. Falls der Brick nicht als serielle Schnittstelle auftaucht, befindet sich der Brick entweder nicht im Bootloader Modus, oder das Betriebssystem hat ihn nicht richtig als serielle Schnittstelle erkannt:
 
--   Auf **Windows** XP und Vista kann es nötig sein den Atmel Treiber `atm6124_cdc.inf` aus dem `drivers` Unterordner der Brick Viewer Installation zu installieren, damit ein Brick im Bootloader Modus richtig als serielle Schnittstelle erkannt wird. Windows 7, 8, 8.1 und 10 erkennt einen Brick im Bootloader Modus von sich aus als "GPS Camera Detect" oder "Bossa Program Port" Gerät. Dies ist auch eine serielle Schnittstelle so das Flashen dennoch möglich ist.
--   Für **alte Linux** Kernel Versionen kann es notwendig sein diesen [SAM-BA Linux USB Kernel Treiber](http://mail.embedded-it.de/microcontroller/eNet-sam7X.php) zu installieren, damit ein Brick im Bootloader Modus richtig funktioniert.
--   Auf **macOS** kann einen Brick im Bootloader Modus als DVB-T Stick erkannt und automatisch EyeTV oder ein ähnliches Programm gestartet werden. Dann einfach EyeTV schließen und mit dem Flash-Vorgang fortfahren.
+- Auf **Windows** XP und Vista kann es nötig sein den Atmel Treiber `atm6124_cdc.inf` aus dem `drivers` Unterordner der Brick Viewer Installation zu installieren, damit ein Brick im Bootloader Modus richtig als serielle Schnittstelle erkannt wird. Windows 7, 8, 8.1 und 10 erkennt einen Brick im Bootloader Modus von sich aus als "GPS Camera Detect" oder "Bossa Program Port" Gerät. Dies ist auch eine serielle Schnittstelle so das Flashen dennoch möglich ist.
+- Für **alte Linux** Kernel Versionen kann es notwendig sein diesen [SAM-BA Linux USB Kernel Treiber](http://mail.embedded-it.de/microcontroller/eNet-sam7X.php) zu installieren, damit ein Brick im Bootloader Modus richtig funktioniert.
+- Auf **macOS** kann einen Brick im Bootloader Modus als DVB-T Stick erkannt und automatisch EyeTV oder ein ähnliches Programm gestartet werden. Dann einfach EyeTV schließen und mit dem Flash-Vorgang fortfahren.
 
 Wird die serielle Schnittstelle des Bricks richtig erkannt muss diese nun im Brick Viewer ausgewählt werden, typische Namen sind:
 
--   Windows: "AT91 USB to Serial Converter" oder "GPS Camera Detect" oder "Bossa Program Port"
--   Linux: `/dev/ttyACM0` oder `/dev/ttyUSB0`
--   macOS: `/dev/tty.usbmodemfd131`
+- Windows: "AT91 USB to Serial Converter" oder "GPS Camera Detect" oder "Bossa Program Port"
+- Linux: `/dev/ttyACM0` oder `/dev/ttyUSB0`
+- macOS: `/dev/tty.usbmodemfd131`
 
 #### Flashen
 
@@ -596,12 +599,12 @@ Anstatt den Brick Viewer die jeweils neuste Firmware herunterladen zu lassen, ka
 
 Brick Viewer benötigt eine graphische Benutzeroberfläche. Falls Bricks an Linux Rechnern ohne graphische Benutzeroberfläche geflasht werden sollen kann `brick-flash` verwendet werden. Es steht als [Debian Packet](https://download.tinkerforge.com/tools/brick_flash/linux/brick-flash_linux_latest.deb) zum Download bereit:
 
-wget --backups=1 https://download.tinkerforge.com/tools/brick_flash/linux/brick-flash_linux_latest.deb
+wget --backups=1 <https://download.tinkerforge.com/tools/brick_flash/linux/brick-flash_linux_latest.deb>
 sudo dpkg -i brick-flash_linux_latest.deb
 
 Im Gegensatz zum Brick Viewer lädt `brick-flash` die Firmware nicht automatisch herunter. Die jeweils neusten Firmwares sind [hier](https://www.tinkerforge.com/de/doc/Downloads.html#downloads-brick-firmwares) zu finden. Lade die zu flashende Firmware herunter, z.B. die neuste Master Brick Firmware:
 
-wget --backups=1 https://download.tinkerforge.com/firmwares/bricks/master/brick_master_firmware_latest.bin
+wget --backups=1 <https://download.tinkerforge.com/firmwares/bricks/master/brick_master_firmware_latest.bin>
 
 Stelle sicher, dass sich der Brick im Bootloader Modus befindet (siehe Brick Viewer Abschnitt weiter oben) und bestimme die serielle Schnittstelle des Bricks. Typischerweise ist dies `/dev/ttyACM0` oder `/dev/ttyUSB0`.
 
@@ -626,7 +629,19 @@ Anstatt den Brick Viewer das jeweils neuste Plugin herunterladen zu lassen, kann
 Darüber hinaus kann die UID des Bricklets ausgelesen und auch neu geschrieben werden. Die UID ist Base58 kodiert, die erlaubten Zeichen umfassen 0-9, a-z und A-Z ohne 0 (Null), I (groß i), O (groß o) und l (klein L). Die einzige weitere Einschränkung ist, dass die UIDs aller Bricklets eindeutig sind.
 
 # Tests und implementation marvin
+
+# Interpreter und Compiler
+
+Ein Compiler und ein Interpreter sind zwei Arten von Programmen, die für die Ausführung von Code verwendet werden können. Beide sind für die Umwandlung von Programmiersprache in ausführbaren Code verantwortlich, jedoch auf unterschiedliche Weise.
+
+Ein Compiler übersetzt den gesamten Quellcode eines Programms in eine ausführbare Datei, die von einem Computer oder Gerät direkt ausgeführt werden kann. Der Compiler prüft dabei den Quellcode auf Syntax- und Semantikfehler, wandelt den Code in eine Zwischensprache um und optimiert den Code für die Zielplattform. Das Ergebnis ist eine Datei, die schnell und effizient ausgeführt werden kann. Beispiele für Compiler sind der GCC-Compiler für C und C++, der Java-Compiler für Java und der Swift-Compiler für Swift.
+
+Ein Interpreter hingegen liest und interpretiert den Quellcode zur Laufzeit, Zeile für Zeile. Der Interpreter wandelt dabei den Quellcode in ausführbaren Code um, ohne eine ausführbare Datei zu erstellen. Der Interpreter prüft dabei ebenfalls auf Syntax- und Semantikfehler und führt den Code sofort aus. Beispiele für Interpreter sind der Python-Interpreter für Python, der Ruby-Interpreter für Ruby und der JavaScript-Interpreter für JavaScript.
+
+Der grösste Unterschied zwischen einem Compiler und einem Interpreter besteht darin, wie sie den Code ausführen. Ein Compiler übersetzt den gesamten Quellcode in ausführbaren Code, bevor das Programm ausgeführt wird, während ein Interpreter den Code Zeile für Zeile interpretiert und ausführt. Ein Compiler erfordert somit mehr Zeit für die Übersetzung, bevor das Programm ausgeführt werden kann, während ein Interpreter sofort ausführen kann, sobald der Code eingegeben wurde. Dies führt zu unterschiedlicher Leistung und Effizienz, wobei Compiler in der Regel schneller und effizienter sind als Interpreter.
+
 # Einführung
+
 Was ist brainfuck überhaupt?
 Brainfuck ist eine esoterische Programmiersprache, die extrem minimalistisch ist und nur aus acht Befehlen besteht. Die Sprache wurde von Urban Müller im Jahr 1993 entwickelt und ist dafür bekannt, dass sie sehr schwer zu lesen und zu schreiben ist. Obwohl Brainfuck nur aus wenigen Befehlen besteht, können dennoch komplexe Programme geschrieben werden. Die Sprache erfordert jedoch viel Übung und Geduld, um effektiv verwendet werden zu können.
 
@@ -643,8 +658,8 @@ Die Befehle:
 
 Diese Befehle können in verschiedenen Kombinationen verwendet werden, um komplexere Programme zu schreiben. Es ist jedoch wichtig zu beachten, dass Brainfuck aufgrund seiner minimalistischen Natur sehr schwer lesbar und schreibbar ist. Es erfordert viel Übung und Geduld, um effektiv in dieser Sprache zu programmieren.
 
-
 Ein kleines beispiel von Hello World! programm in Brainfuck:
+
 ```brainfuck
 ++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.
 ```
@@ -677,12 +692,15 @@ Jetzt die Erklärung was das Program macht Step bz Step.
 # Abschlussbericht
 
 ## Erreichte Ziele
+
 Wir freuen uns, mitteilen zu können, dass wir alle unsere Ziele in diesem Projekt erreicht haben. Die Implementierung des Brainfuck Compilers und die Visualisierung auf der Embedded Hardware Tinkerforge (OLED Display) wurden erfolgreich abgeschlossen. Wir haben viel über Java, Brainfuck und systematische Abläufe beim Erstellen von Codes gelernt und sind an den Herausforderungen gewachsen.
 
 ## Schwierigkeiten
+
 Einige Schwierigkeiten im Zeitmanagement bei der Programmierung in Java führten jedoch zu Verzögerungen in der Dokumentation des Projekts. Wir sind uns bewusst, dass wir uns besser und genauer auf den Projektauftrag konzentrieren müssen, um solche Schwierigkeiten zu vermeiden. Wir haben uns auch vorgenommen, das Projekt von Anfang an sorgfältiger zu dokumentieren, um besser auf dem Laufenden zu bleiben und eine effektive Projektdokumentation zu erstellen.
 
 ## Verbesserungsvorschläge
+
 Für zukünftige Projekte empfehlen wir eine sorgfältige Einschätzung des Projekts und eine klare Definition der Ziele, um sicherzustellen, dass das Projekt reibungslos verläuft. Wir schlagen auch vor, regelmäßige Meetings und Überprüfungen des Fortschritts durchzuführen, um auf dem Laufenden zu bleiben und Verzögerungen zu minimieren.
 
 ## Schlussfolgerung
@@ -704,5 +722,3 @@ Wir möchten uns bei allen bedanken, die uns bei diesem Projekt unterstützt hab
 Dieses Projekt hat uns nicht nur gezeigt, wie wichtig eine sorgfältige Planung und Durchführung von Projekten ist, sondern auch, wie wichtig es ist, als Team zusammenzuarbeiten und sich gegenseitig zu unterstützen. Wir haben viel gelernt und sind stolz auf das, was wir erreicht haben.
 
 Abschließend möchten wir sagen, dass wir uns auf zukünftige Projekte freuen und uns darauf konzentrieren werden, unser Wissen und unsere Fähigkeiten zu erweitern und zu verbessern. Wir sind dankbar für die Erfahrungen, die wir in diesem Projekt gemacht haben und freuen uns auf die Herausforderungen, die uns in Zukunft erwarten.
-
-
