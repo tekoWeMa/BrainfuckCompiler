@@ -13,7 +13,62 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Projektauftrag.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b20cdb089545959e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "doc/Dokumentation.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "481bdc8307aa0c48",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "NotizenMario.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c3c3849abd429e7f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Risikoanalyse.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      },
+      {
+        "id": "bc58928a6f59adba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2aee216ecfa90460",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Projektauftrag.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +140,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "doc/Dokumentation.md",
+                "file": "Risikoanalyse.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +157,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "doc/Dokumentation.md",
+                "file": "Risikoanalyse.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +180,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "doc/Dokumentation.md"
+                "file": "Risikoanalyse.md"
               }
             }
           }
@@ -146,16 +201,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "85b392ea2d6c4c2d",
+  "active": "c3c3849abd429e7f",
   "lastOpenFiles": [
-    "doc/Pflichtenheft.md",
-    "doc/Präsentation.md",
+    "doc/Was_Ist_Brainfuck.md",
+    "NotizenMario.md",
+    "Risikoanalyse.md",
+    "Projektauftrag.md",
     "doc/Dokumentation.md",
+    "doc/Projektstatusbericht.md",
+    "doc/Wieso.md",
+    "doc/Pflichtenheft.md",
+    "doc/Projektplan.md",
+    "doc/Präsentation.md",
+    "Projekt",
+    "doc/res/Pasted image 20230217111134.png",
+    "doc/res/Pasted image 20230217111112.png",
     "doc/res/Raspi-Interface.png",
     "doc/res/Pasted image 20230217110528.png",
     "doc/res/Pasted image 20230217110454.png",
-    "doc/res/SSH.png",
-    "doc/Projektstatusbericht.md",
-    "doc/Projektplan.md"
+    "doc/res/SSH.png"
   ]
 }

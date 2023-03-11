@@ -8,4 +8,4 @@ Zweitens kann es für die Forschung in der theoretischen Informatik von Nutzen s
 
 Drittens kann es einfach aus Gründen der Unterhaltung sein. Wir haben ein grosses intresses an spannend Informatik Theman, finden es einfach faszinierend, mit Brainfuck zu arbeiten und zu sehen, wie sich komplexe Algorithmen mit nur wenigen Befehlen schreiben lassen.
 
-Es bietet die Möglichkeit, Programmierkenntnisse zu verbessern, theoretische Konzepte zu erforschen und sich einfach mit einer faszinierenden Programmiersprache zu beschäftigen. Insgesamt ist das Schreiben eines Brainfuck-Compilers eine herausfordernde und interessante Aufgabe, die uns Stellen möchten aufgrund von den oberen genannten Gründen, deswegen haben wir uns entschieden dafür.
+Es bietet die Möglichkeit, Programmierkenntnisse zu verbessern, theoretische Konzepte zu erforschen und sich einfach mit einer faszinierenden Programmiersprache zu beschäftigen. Insgesamt ist das Schreiben eines Brainfuck-Compilers eine herausfordernde und interessante Aufgabe, die wir uns Stellen möchten aufgrund von den oberen genannten Gründen, deswegen haben wir uns entschieden dafür.

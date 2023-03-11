@@ -1,0 +1,3 @@
+- Projektauftrag
+- Risikoanalyse
+- Unterschied Compiler und interpreter
