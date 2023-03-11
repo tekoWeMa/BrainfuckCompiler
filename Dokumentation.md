@@ -57,9 +57,17 @@ Insgesamt haben wir wertvolle Erfahrungen gesammelt und unsere Programmierkenntn
   - [Verwendung](#verwendung)
   - [Updates](#updates)
   - [Aktuellen Stand bestimmen / Nach Updates suchen](#aktuellen-stand-bestimmen--nach-updates-suchen)
-- [Tests und implementation marvin](#tests-und-implementation-marvin)
 - [Interpreter und Compiler](#interpreter-und-compiler)
 - [Einführung](#einführung)
+- [Implementation mit Java](#implementation-mit-java)
+    - [Einlesen des Brainfuck-Codes aus einer Datei](#einlesen-des-brainfuck-codes-aus-einer-datei)
+    - [Speichern der Opcodes](#speichern-der-opcodes)
+    - [Behandlung von Schleifen](#behandlung-von-schleifen)
+    - [Ausführen des Brainfuck-Codes](#ausführen-des-brainfuck-codes)
+    - [Behandlung von Fehlern](#behandlung-von-fehlern)
+    - [Klasse `BracketPair`](#klasse-bracketpair)
+    - [Enumeration `OpcodeEnum`](#enumeration-opcodeenum)
+- [Tests und implementation marvin](#tests-und-implementation-marvin)
 - [Abschlussbericht](#abschlussbericht)
   - [Erreichte Ziele](#erreichte-ziele)
   - [Schwierigkeiten](#schwierigkeiten)
@@ -197,7 +205,7 @@ Zusammenfassend kann gesagt werden, dass das Projekt einige Risiken birgt. Wir w
 
 | Meilensteine                                              | Ziel der Fertigstellung | Fertiggestellt am |
 | --------------------------------------------------------- | ----------------------- | ----------------- |
-| Konzeption (Benötigte Komponenten, Aufbau, Vorgehen)       | bis 11.02.2022          | 11.02.2022        |
+| Konzeption (Benötigte Komponenten, Aufbau, Vorgehen)       | bis 11.12.2022          | 11.12.2022        |
 | Versuchsaufbau mit Tinkerforge (Red Brick, OLED Display)   | bis 01.03.2023          | 19.02.2023        |
 | Programmierung von Interpreter und Compilier               | bis 18.02.2023          | 04.03.2023        |
 | Entwicklung der Darstellung von Output                     | bis 25.02.2023          | 04.03.2023        |
@@ -323,6 +331,7 @@ Um den HAT Brick verwenden zu können, muss zuerst der [Brick Daemon](https://w
 
 Es wird ein Interface verwendet mit dem Namen "Brick Viewer" für eine visuelle veranschaulichung.
 Der Brick Viewer kann entweder direkt auf dem Raspberry Pi oder auf einem externen PC, der über Ethernet oder WLAN Zugriff auf den Raspberry Pi besitzt, installiert werden. Von einem externen PC aus muss sich auf den Hostnamen oder die IP des Raspberry Pis verbunden werden, vom Raspberry Pi aus auf localhost.
+Wir haben uns entschieden, die Installation direkt auf dem Raspberry Pi durchzuführen, um aus Gründen der Einfachheit bei einem Gerät zu bleiben.
 
 ![](res/Pasted%20image%2020230217122052.jpg)
 
@@ -409,8 +418,6 @@ Hierzu muss auf "Updates / Flashing" geklickt werden. Der Dialog zeigt die anges
 
 Der Dialog ermöglicht es alle Bricklets gleichzeitig über den Knopf "Auto-Update All Bricklets" auf die neuste Softwareversion zu bringen. Bricks können nicht automatisch auf den neusten Stand gebracht werden (siehe [Brick Firmware Flashing](https://www.tinkerforge.com/de/doc/Software/Brickv.html#brickv-flash-brick-firmware)).
 
-# Tests und implementation marvin
-
 # Interpreter und Compiler
 
 Ein Compiler und ein Interpreter sind zwei Arten von Programmen, die für die Ausführung von Code verwendet werden können. Beide sind für die Umwandlung von Programmiersprache in ausführbaren Code verantwortlich, jedoch auf unterschiedliche Weise.
@@ -469,6 +476,47 @@ Jetzt die Erklärung was das Program macht Step bz Step.
 | ----- ---. | Verringert den Wert der zweiten Speicherzelle (#2) um 3 und gibt den ASCII-Code 100 ("d") aus |
 | >+. | Bewegt den Zeiger auf die dritte Speicherzelle (#3) und gibt den ASCII-Code 33 ("!") aus |
 | >. | Gibt den ASCII-Code 10 (newline) aus |
+
+# Implementation mit Java
+
+Es gibt einige wichtige Code-Ausschnitte, die wie folgt beschrieben werden können:
+
+### Einlesen des Brainfuck-Codes aus einer Datei
+
+In diesem Abschnitt wird der Dateipfad zur Textdatei festgelegt, die den Brainfuck-Code enthält. Mit der Methode `Files.readString` wird der Inhalt der Datei in einen String gespeichert.
+![](doc/res/Pasted%20image%2020230311194631.png)
+
+### Speichern der Opcodes
+
+In diesem Abschnitt wird eine Liste erstellt, die die Opcodes des Brainfuck-Codes enthält. Dabei wird jede Zeichenfolge in der Brainfuck-Syntax in eine der acht Opcodes übersetzt. Diese werden in der `ArrayList` mit dem Namen `EnumList` gespeichert.
+![](doc/res/Pasted%20image%2020230311195020.png)
+
+### Behandlung von Schleifen
+
+Dieser Abschnitt behandelt die Schleifen in Brainfuck. Hierfür wird eine `Stack`-Datenstruktur verwendet, um die Positionen der öffnenden Klammern in der `ArrayList` `EnumList` zu speichern. Wenn eine schließende Klammer gefunden wird, wird die Position des passenden öffnenden Klammerns aus dem Stack abgerufen und ein neues `BracketPair`-Objekt erstellt, das die beiden Positionen speichert.
+![](doc/res/Pasted%20image%2020230311195232.png)
+  
+### Ausführen des Brainfuck-Codes
+
+Dieser Abschnitt führt den Brainfuck-Code aus, indem er jedes Opcode-Element in der `ArrayList` `EnumList` abruft und die entsprechenden Anweisungen ausführt. Die Anweisungen sind das Inkrementieren oder Dekrementieren des Zeigers, das Erhöhen oder Verringern des Wertes im Speicher, das Drucken oder Einlesen von Werten und die Verarbeitung von Schleifen.
+![](doc/res/Pasted%20image%2020230311195318.png)
+
+### Behandlung von Fehlern
+
+Dieser Abschnitt behandelt Fehler, die während der Übersetzung oder Ausführung des Brainfuck-Codes auftreten können. Wenn beispielsweise eine schließende Klammer ohne eine entsprechende öffnende Klammer gefunden wird, wird die Position des Fehlers ausgegeben. Ebenso wird eine Warnung ausgegeben, wenn eine öffnende Klammer gefunden wird, für die es keine passende schließende Klammer gibt.
+![](doc/res/Pasted%20image%2020230311195417.png)
+
+### Klasse `BracketPair`
+
+Dies ist eine einfache Klasse, die ein Paar von Klammern darstellt. Sie speichert die Positionen der öffnenden und schließenden Klammern in der `ArrayList` `EnumList`.
+![](doc/res/Pasted%20image%2020230311195443.png)
+
+### Enumeration `OpcodeEnum`
+
+Dies ist eine Enumeration, die die acht Opcodes des Brainfuck-Codes definiert. Sie wird verwendet, um die Opcodes in der `ArrayList` `EnumList` zu speichern.
+![](doc/res/Pasted%20image%2020230311195457.png)
+
+# Tests und implementation marvin
 
 # Abschlussbericht
 
