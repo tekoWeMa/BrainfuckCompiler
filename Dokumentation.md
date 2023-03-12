@@ -30,7 +30,7 @@ Insgesamt haben wir wertvolle Erfahrungen gesammelt und unsere Programmierkenntn
 
 - [Teko schweizerische Fachhochschule](#teko-schweizerische-fachhochschule)
   - [L-TIN-21-T-a](#l-tin-21-t-a)
-    - [Brainfuck Compiler](#brainfuck-compiler)
+    - [Projektarbeit: Brainfuck Compiler](#projektarbeit-brainfuck-compiler)
 - [Management Summary](#management-summary)
 - [Inhaltsverzeichnis](#inhaltsverzeichnis)
 - [Vorwort](#vorwort)
