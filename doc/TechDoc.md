@@ -14,20 +14,25 @@ Insgesamt ist das Viewer-Projekt eine wichtige Komponente in diesem System, da e
 
 TODO: insert screenshot
 
-## bf
+### bf
 Das Projekt nennt sich "Brainfuck Transpiler". Es ist eine Anwendung, die geschrieben wurde, um Brainfuck-Code in C- und Rust-Code umzuwandeln. Der Zweck dieser Anwendung ist es, Brainfuck-Code in eine höhere Programmiersprache zu übersetzen, die einfacher zu lesen und zu verstehen ist.
 
 Die Anwendung besteht aus fünf Hauptkomponenten:
 
-Tokenizer: Der Tokenizer ist für das Aufteilen des Brainfuck-Codes in Tokens zuständig. Ein Token ist eine Art von Textelement, das eine spezielle Bedeutung hat. Der Tokenizer durchsucht den Brainfuck-Code und identifiziert jedes Token. Jedes Token wird dann an den Parser weitergegeben.
+#### Tokenizer: 
+Der Tokenizer ist für das Aufteilen des Brainfuck-Codes in Tokens zuständig. Ein Token ist eine Art von Textelement, das eine spezielle Bedeutung hat. Der Tokenizer durchsucht den Brainfuck-Code und identifiziert jedes Token. Jedes Token wird dann an den Parser weitergegeben.
 
-Parser: Der Parser nimmt die Tokens welche er verwendet, um IR-Expressions zu generieren. Die generierten IR-Expressions werden dann an den Optimizer weitergegeben, der sie optimiert.
+#### Parser: 
+Der Parser nimmt die Tokens welche er verwendet, um IR-Expressions zu generieren. Die generierten IR-Expressions werden dann an den Optimizer weitergegeben, der sie optimiert.
 
-Optimizer: Der Optimizer ist ein Programmteil oder eine Funktion, die Brainfuck-Code analysiert und optimiert, um die Ausführung des Programms zu verbessern. Der Zweck des Optimierers besteht darin, die Ausführungszeit und den Speicherverbrauch des Programms zu reduzieren, indem der Code effizienter gestaltet wird.
+#### Optimizer: 
+Der Optimizer ist ein Programmteil/Funktion, die Brainfuck-Code analysiert und optimiert, um die Ausführung des Programms zu verbessern, also zu optimieren. Der Zweck des Optimierers besteht darin, die Ausführungszeit und den Speicherverbrauch des Programms zu reduzieren, indem der Code effizienter gestaltet wird.
 
-Pipeline: Die Pipeline nimmt den Brainfuck-Code als Eingabe und gibt einen optimierten Brainfuck-Code als Ausgabe aus. Der optimierte Code kann dann in eine ausführbare Datei kompiliert werden, in unseren fall waere das die VM, Rust, C backends.
+#### Pipeline: 
+Die Pipeline nimmt den Brainfuck-Code als Eingabe und gibt einen optimierten Brainfuck-Code als Ausgabe aus. Der optimierte Code kann dann in eine ausführbare Datei kompiliert werden. In unserem Fall wird dies von den Backends VM, Rust und C übernommen.
 
-Transpiler: Der Transpiler ist das Kernstück der Anwendung. Der Transpiler ruft sowohl das gewuenschte Backend auf. Der Transpiler liest die Expressions ein und sorgt dasfuer das der Korrekt code erzeugt wird fuer das jeweilige backend. Der Transpiler übersetzt die Tokens in C- oder Rust-Code, der dann in eine String geschrieben wird.
+#### Transpiler: 
+Der Transpiler ist das Kernstück der Anwendung. Der Transpiler ruft sowohl das gewünschte Backend auf. Der Transpiler liest die Expressions ein und sorgt dafür dass der Korrekte code erzeugt wird für das jeweilige backend. Der Transpiler übersetzt die Tokens in C- oder Rust-Code, der dann in einen String geschrieben wird.
 
 Das Ergebnis des Projekts ist eine C- oder Rust-Datei, die den übersetzten Brainfuck-Code enthält. Diese Datei kann dann in eine ausführbare Datei kompiliert werden und auf einer beliebigen Plattform ausgeführt werden.
 
@@ -112,9 +117,9 @@ impl Parser {
 ```
 ### Pipeline
 ### Backends
-Die Backends sind dafür verantwortlich, auf Basis der Expressions das entsprechende Backend zu generieren. In unserem Fall handelt es sich um Rust- und C-Dateien, die aus den Expressions erzeugt werden. Die Backends übernehmen dabei die Aufgabe, den erzeugten Code zu transpilieren. Sobald das Backend erstellt wurde, kann der transpilierte/generierte Code kompiliert und ausgeführt werden. In Rust mit rustc, und in C mit gcc.
+Die Backends sind dafür verantwortlich, auf Basis der Expressions das entsprechende Backend zu generieren. In unserem Fall handelt es sich um Rust- und C-Dateien, die aus den Expressions erzeugt werden. Die Backends übernehmen dabei die Aufgabe, den erzeugten Code zu transpilieren. Sobald das Backend erstellt wurde, kann der transpilierte/generierte Code kompiliert und ausgeführt werden. In Rust wird dies gemacht mit rustc und in C mit gcc/clang.
 ### IR
-Die IR ist eine abstrakte Darstellung des Quellcodes, die unabhängig von einer bestimmten Programmiersprache ist und in der Regel in einer einfachen und standardisierten Form vorliegt. Sie wird verwendet, um den Quellcode auf semantische Eigenschaften zu analysieren und zu optimieren, bevor er in Maschinencode übersetzt wird.
+Die Intermediäre Repräsentation (IR) stellt den Quellcode in einer vereinfachten und standardisierten Form dar, die unabhängig von einer bestimmten Programmiersprache ist. Sie dient dazu, den Quellcode auf seine Bedeutung hin zu analysieren und zu optimieren, bevor er in Maschinencode umgewandelt wird.
 
 Die Verwendung von IR erleichtert es auch, verschiedene Optimierungstechniken auf den Code anzuwenden, ohne dass dabei die eigentliche Programmiersprache berücksichtigt werden muss. Auf diese Weise kann der Compiler oder das Programmierwerkzeug eine optimierte Version des Codes generieren, die schneller und effizienter ausgeführt werden kann.
 
@@ -134,7 +139,7 @@ pub enum Expression {
 ```
 
 ### IR Erklärung
-Der obenstehende Code definiert eine öffentliche Enum namens "Expression". Eine Enum ist eine Konstruktion in Rust, die es ermöglicht, eine begrenzte Anzahl von möglichen Werten zu definieren, die ein bestimmtes Konzept oder eine bestimmte Idee darstellen.
+Der Code definiert ein öffentliches Enum namens "Expression". Enums sind eine Konstruktion, welche ermöglichen, eine begrenzte Anzahl von möglichen Werten zu definieren. Diese stellen dann ein bestimmtes Konzept dar.
 
 In diesem Fall enthält die "Expression" Enum sieben Varianten:
 
@@ -150,7 +155,7 @@ In diesem Fall enthält die "Expression" Enum sieben Varianten:
 
 "Output" und "Input" haben keine Parameter. Diese Varianten repräsentieren die Operationen, um den Wert an der aktuellen Speicherposition im Speicher als ASCII-Zeichen auf der Konsole auszugeben oder ein ASCII-Zeichen von der Konsole einzulesen und an der aktuellen Speicherposition im Speicher zu speichern.
 
-Zusammengefasst definiert dieser Code also eine Enum, die verschiedene Operationen für die Manipulation des Speichers in der Programmiersprache Brainfuck für die Ausführung auf einer Maschine definiert.
+Zusammengefasst definiert dieser Code also enums, die verschiedene Operationen für die Manipulation des Speichers in der Programmiersprache Brainfuck für die Ausführung auf einer Maschine definiert.
 
 ### Optimierungen
 Der Optimizer besteht aus drei Optimierungen: Copy, Clear und ConcatOptimizer.
@@ -235,13 +240,15 @@ impl Optimizer for ConcatOptimizer {
 }
 ```
 ### ConcatOptimizer Erklärung
-Dieser Code definiert eine Struktur namens ConcatOptimizer, die Teil des Optimizers ist. Die ConcatOptimizer Struktur enthält zwei Funktionen namens optimize_stage_01 und optimize_stage_02, die jeweils eine Vektor von Ausdrücken (Expression) als Eingabe nehmen und eine optimierte Vektor von Ausdrücken zurückgeben.
+Der ConcatOptimizer enthält zwei Funktionen: optimize_stage_01 und optimize_stage_02, die jeweils ein Vektor von Ausdrücken (Expression) als Eingabe nehmen und einen optimierte Vektor von Ausdrücken zurückgeben.
 
-optimize_stage_01 optimiert die Ausdrücke in Bezug auf die Inkrementierung oder Dekrementierung von Werten und Zeigern sowie auf Schleifen. Die Optimierung wird durchgeführt, indem ähnliche aufeinanderfolgende Ausdrücke zusammengefasst werden. Zum Beispiel, wenn der Ausdruck IncVal(1) direkt auf einen IncVal(n) Ausdruck folgt, wird der IncVal(n) Ausdruck durch einen einzigen IncVal(n+1) Ausdruck ersetzt.
+optimize_stage_01 optimiert die Ausdrücke in Bezug auf die Inkrementierung/Dekrementierung von Werten und Zeigern sowie auf Schleifen. Die Optimierung wird durchgeführt, indem ähnliche aufeinanderfolgende Ausdrücke zusammengefasst werden.
+Beispiel: Wenn der Ausdruck IncVal(1) direkt auf einen IncVal(n) Ausdruck folgt, wird der IncVal(n) Ausdruck durch einen einzigen IncVal(n+1) Ausdruck ersetzt.
 
-optimize_stage_02 führt eine weitere Optimierung der Ausdrücke durch, indem sie ähnliche aufeinanderfolgende Ausdrücke miteinander kombiniert. Zum Beispiel, wenn der Ausdruck IncVal(n) direkt auf einen DecVal(m) Ausdruck folgt, werden beide Ausdrücke durch einen einzigen Loop(IncVal(n-m)) Ausdruck ersetzt.
+optimize_stage_02 führt eine weitere Optimierung der Ausdrücke durch, indem sie ähnliche aufeinanderfolgende Ausdrücke miteinander kombiniert. 
+Beispiel: Wenn der Ausdruck IncVal(n) direkt auf einen DecVal(m) Ausdruck folgt, werden beide Ausdrücke durch einen einzigen Loop(IncVal(n-m)) Ausdruck ersetzt.
 
-Schließlich implementiert die Struktur die optimize Funktion, die eine Kette von Optimierungen ausführt, indem sie zuerst optimize_stage_01 auf die Eingabe anwendet und dann das Ergebnis an optimize_stage_02 weitergibt.
+Schliesslich implementiert die Struktur die optimize Funktion, die eine Kette von Optimierungen ausführt, indem sie zuerst optimize_stage_01 auf die Eingabe anwendet und dann das Ergebnis an optimize_stage_02 weitergibt.
 
 #### ClearOptimizer
 ```rust
@@ -279,7 +286,7 @@ impl Optimizer for ClearOptimizer {
 
 Die optimize-Methode nimmt eine Liste von Expression-Werten und gibt eine optimierte Liste von Expression-Werten zurück. Der Optimierer entfernt alle Schleifen, die lediglich aus einer einzigen Inkrementierung oder Dekrementierung des Zellwerts bestehen, und ersetzt sie durch einen einzigen Clear-Befehl.
 
-Die Funktion iteriert durch die gegebene Liste von Expressions und prüft, ob die Expression eine Schleife ist. Wenn dies der Fall ist, wird überprüft, ob die Schleife aus einer einzigen Inkrementierung oder Dekrementierung besteht. In diesem Fall wird ein Clear-Befehl zur optimierten Liste hinzugefügt. Andernfalls wird die Schleife rekursiv optimiert und zur optimierten Liste hinzugefügt.
+Die Funktion iteriert durch die gegebene Liste von Expressions und prüft, ob die Expression eine Schleife ist. Ist dies der Fall: es wird überprüft, ob die Schleife aus einer einzigen Inkrementierung oder Dekrementierung besteht. In diesem Fall wird ein Clear-Befehl zur optimierten Liste hinzugefügt. Andernfalls wird die Schleife rekursiv optimiert und zur optimierten Liste hinzugefügt.
 
 Wenn die Expression keine Schleife ist, wird sie unverändert zur optimierten Liste hinzugefügt.
 
@@ -358,11 +365,13 @@ impl Optimizer for CopyOptimizer {
 }
 ```
 
-Die CopyOptimizer-Struktur implementiert die Optimizer-Trait. Die Methode optimize der CopyOptimizer-Struktur erhält eine Slice von Expression-Instanzen und gibt eine optimierte Version zurück.
+Die CopyOptimizer-Struktur implementiert die Optimizer-Trait. Die Methode optimize erhält einen Slice von Expression-Instanzen und gibt eine optimierte Version zurück.
 
-Die Optimierung, die CopyOptimizer durchführt, versucht, die aufeinanderfolgenden Operationen, die eine Kopie von Daten ausführen, zusammenzufassen. Die optimierten Ausdrücke werden in einem Vektor namens optimized gesammelt.
+Die Optimierung, versucht die aufeinanderfolgenden Operationen, die eine Kopie von Daten ausführen, zusammenzufassen. Die optimierten Ausdrücke werden in einem Vektor namens "optimized" gesammelt.
 
-In der Methode optimize wird für jedes Expression in der übergebenen Slice ein Match-Block durchlaufen, um den Expression-Typ zu bestimmen und die Optimierung durchzuführen. Wenn der Expression-Typ eine Schleife ist, wird für jeden Expression in der Schleife ein weiteres Match-Block durchlaufen, um zu bestimmen, welche Art von Expression vorliegt. Wenn eine Expression vorliegt, die eine Kopie von Daten ausführt, wird ein CopyOptimizerContext erstellt, um Informationen über die Ausführung dieser Expression zu sammeln.
+In der Methode optimize wird für jede Expression in der übergebenen Slice einen Match-Block durchlaufen, um den Expression-Typ zu bestimmen und die Optimierung durchzuführen. Wenn der Expression-Typ eine Schleife ist, wird für jede Expression in der Schleife einen weiteren Match-Block durchlaufen, um zu bestimmen, welche Art von Expression vorliegt. 
+
+Wenn eine Expression vorliegt, die eine Kopie von Daten ausführt, wird ein CopyOptimizerContext erstellt, um Informationen über die Ausführung dieser Expression zu sammeln.
 
 Am Ende der Schleife wird geprüft, ob es sich lohnt, die Operationen zusammenzufassen. Wenn ja, wird eine optimierte Version der aufeinanderfolgenden Operationen erzeugt. Andernfalls wird die Schleife unverändert in die optimierte Version eingefügt.
 

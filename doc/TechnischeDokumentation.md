@@ -85,7 +85,7 @@ Mit dem HAT Brick kann ein [Watchdog](https://www.tinkerforge.com/de/doc/Hardwa
 
 Der HAT Brick ist elektronisch kompatibel zu den Raspberry Pis 2B, 3B, 3B+, 4B, Zero und Zero W. Die Befestigungslöcher sind kompatibel zum Raspberry Pi 2/3/4. Zusätzlich bieten wir mit dem [HAT Zero Brick](https://www.tinkerforge.com/de/doc/Hardware/Bricks/HAT_Zero_Brick.html#hat-zero-brick) eine kleinere Version, deren Befestigungslöcher zum Raspberry Pi Zero kompatibel sind.
 
-TODO Technische spezifikationen
+
 
 ## Ressourcen
 

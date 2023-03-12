@@ -81,8 +81,27 @@ Insgesamt haben wir wertvolle Erfahrungen gesammelt und unsere Programmierkenntn
     - [Behandlung von Fehlern](#behandlung-von-fehlern)
     - [Klasse `BracketPair`](#klasse-bracketpair)
     - [Enumeration `OpcodeEnum`](#enumeration-opcodeenum)
-- [Tests und implementation marvin](#tests-und-implementation-marvin)
-  - [Implementation](#implementation)
+- [Implementation](#implementation)
+  - [Aufbau des Projekts](#aufbau-des-projekts)
+    - [Viewer](#viewer)
+    - [bf](#bf)
+      - [Tokenizer:](#tokenizer)
+      - [Parser:](#parser)
+      - [Optimizer:](#optimizer)
+      - [Pipeline:](#pipeline)
+      - [Transpiler:](#transpiler)
+    - [Tokenizer](#tokenizer-1)
+    - [Parser](#parser-1)
+    - [Pipeline](#pipeline-1)
+    - [Backends](#backends)
+    - [IR](#ir)
+    - [IR Code](#ir-code)
+    - [IR Erklärung](#ir-erklärung)
+    - [Optimierungen](#optimierungen)
+      - [ConcatOptimizer](#concatoptimizer)
+      - [ConcatOptimizer Erklärung](#concatoptimizer-erklärung)
+      - [ClearOptimizer](#clearoptimizer)
+      - [CopyOptimizer](#copyoptimizer)
   - [Tests](#tests)
     - [Rust Installation](#rust-installation)
     - [Testcases](#testcases)
@@ -100,6 +119,7 @@ Insgesamt haben wir wertvolle Erfahrungen gesammelt und unsere Programmierkenntn
       - [Output Online](#output-online)
       - [Output Java](#output-java-2)
       - [Output Rust](#output-rust-2)
+    - [Unit Tests Optimizer](#unit-tests-optimizer)
 - [Abschlussbericht](#abschlussbericht)
   - [Erreichte Ziele](#erreichte-ziele)
   - [Schwierigkeiten](#schwierigkeiten)
@@ -550,9 +570,389 @@ Dies ist eine einfache Klasse, die ein Paar von Klammern darstellt. Sie speicher
 Dies ist eine Enumeration, die die acht Opcodes des Brainfuck-Codes definiert. Sie wird verwendet, um die Opcodes in der `ArrayList` `EnumList` zu speichern.
 ![](doc/res/Pasted%20image%2020230311195457.png)
 
-# Tests und implementation marvin
+# Implementation
 
-## Implementation
+## Aufbau des Projekts
+Das Projekt ist in 3 Komponten gegliedert ein mal das Viewer, BF und den BrainfuckCompiler.
+
+### Viewer
+Das Viewer-Projekt ist eine Software, die speziell dafür entwickelt wurde, um Text auf dem OLED-Display darzustellen. Es ist ein beliebtes Display-Format für kleine elektronische Geräte wie Smartwatches, Fitness-Tracker und vieles mehr.
+
+Die Texte, die auf dem OLED-Display dargestellt werden sollen, werden von den beiden anderen Projekten generiert: BF und BrainfuckCompiler.
+
+Das Viewer-Projekt fungiert als Vermittler zwischen den beiden anderen Projekten und dem OLED-Display. Sobald die Texte von BF oder BrainfuckCompiler generiert wurden, können die ans Viewer-Projekt gesendet werden. Das Viewer-Projekt nimmt diese Texte entgegen, und zeigt diese dann auf dem OLED-Display an.
+
+Der Viewer verwendet dabei eine spezielle Programmierschnittstelle (API), um mit dem OLED-Display zu kommunizieren. Diese API ermöglicht es dem Viewer, den Text auf dem Display anzuzeigen, indem er die richtigen Befehle an das Display sendet.
+
+Insgesamt ist das Viewer-Projekt eine wichtige Komponente in diesem System, da es die Texte von BF und BrainfuckCompiler auf dem OLED-Display darstellt und so den Entwicklern eine einfache Möglichkeit bietet, ihre Algorithmen zu testen und zu debuggen.
+
+![](doc/res/Pasted%20image%2020230312150905.png)
+
+Dies ist der Output der Textdatei. Diese Information dient als Debug-Funktion, sodass wir feststellen können, ob es auf dem Display korrekt angezeigt wird.
+
+### bf
+Das Projekt nennt sich "Brainfuck Transpiler". Es ist eine Anwendung, die geschrieben wurde, um Brainfuck-Code in C- und Rust-Code umzuwandeln. Der Zweck dieser Anwendung ist es, Brainfuck-Code in eine höhere Programmiersprache zu übersetzen, die einfacher zu lesen und zu verstehen ist.
+
+Die Anwendung besteht aus fünf Hauptkomponenten:
+
+#### Tokenizer: 
+Der Tokenizer ist für das Aufteilen des Brainfuck-Codes in Tokens zuständig. Ein Token ist eine Art von Textelement, das eine spezielle Bedeutung hat. Der Tokenizer durchsucht den Brainfuck-Code und identifiziert jedes Token. Jedes Token wird dann an den Parser weitergegeben.
+
+#### Parser: 
+Der Parser nimmt die Tokens welche er verwendet, um IR-Expressions zu generieren. Die generierten IR-Expressions werden dann an den Optimizer weitergegeben, der sie optimiert.
+
+#### Optimizer: 
+Der Optimizer ist ein Programmteil/Funktion, die Brainfuck-Code analysiert und optimiert, um die Ausführung des Programms zu verbessern, also zu optimieren. Der Zweck des Optimierers besteht darin, die Ausführungszeit und den Speicherverbrauch des Programms zu reduzieren, indem der Code effizienter gestaltet wird.
+
+#### Pipeline: 
+Die Pipeline nimmt den Brainfuck-Code als Eingabe und gibt einen optimierten Brainfuck-Code als Ausgabe aus. Der optimierte Code kann dann in eine ausführbare Datei kompiliert werden. In unserem Fall wird dies von den Backends VM, Rust und C übernommen.
+
+#### Transpiler: 
+Der Transpiler ist das Kernstück der Anwendung. Der Transpiler ruft sowohl das gewünschte Backend auf. Der Transpiler liest die Expressions ein und sorgt dafür dass der Korrekte code erzeugt wird für das jeweilige backend. Der Transpiler übersetzt die Tokens in C- oder Rust-Code, der dann in einen String geschrieben wird.
+
+Das Ergebnis des Projekts ist eine C- oder Rust-Datei, die den übersetzten Brainfuck-Code enthält. Diese Datei kann dann in eine ausführbare Datei kompiliert werden und auf einer beliebigen Plattform ausgeführt werden.
+
+Dieses Projekt kann Entwicklern helfen, Brainfuck-Code auf eine höhere Programmiersprache zu übersetzen und so das Debugging und die Wartung von Brainfuck-Code zu vereinfachen.
+
+### Tokenizer
+Der Tokenizer analysiert die vordefinierten Zeichen von Brainfuck und erzeugt entsprechende Tokens für jeden von ihnen.
+
+```rust
+
+pub struct Tokenizer;
+
+impl Tokenizer {
+    pub fn tokenize(text: &str) -> Vec<Token> {
+        text.chars().into_iter().map(Self::tokenize_char).collect()
+    }
+
+    fn tokenize_char(char: char) -> Token {
+        match char {
+            '+' => Token::Plus,
+            '-' => Token::Minus,
+            '.' => Token::Dot,
+            '>' => Token::Shr,
+            '<' => Token::Shl,
+            '[' => Token::OpenBracket,
+            ']' => Token::CloseBracket,
+            _ => Token::Whitespace(char),
+        }
+    }
+}
+```
+### Parser
+Für jedes Token erstellt der Parser eine Expression.
+```rust
+pub struct Parser;
+
+impl Parser {
+    pub fn parse(tokens: &[Token]) -> Vec<Expression> {
+        let mut expressions = vec![];
+        let mut indexes: Vec<usize> = vec![];
+
+        for token in tokens.iter().filter(Self::filter) {
+            match token {
+                Token::Plus => {
+                    expressions.push(Expression::IncVal(1));
+                }
+                Token::Minus => {
+                    expressions.push(Expression::DecVal(1));
+                }
+                Token::Dot => {
+                    expressions.push(Expression::Output);
+                }
+                Token::Comma => {
+                    expressions.push(Expression::Input);
+                }
+                Token::Shr => {
+                    expressions.push(Expression::IncPtr(1));
+                }
+                Token::Shl => {
+                    expressions.push(Expression::DecPtr(1));
+                }
+                Token::OpenBracket => {
+                    indexes.push(expressions.len());
+                }
+                Token::CloseBracket => {
+                    let start_index = indexes.pop().unwrap();
+                    let r#loop = expressions.split_off(start_index);
+                    expressions.push(Expression::Loop(r#loop));
+                }
+                Token::Whitespace(_) => {
+                    unreachable!()
+                }
+            }
+        }
+        expressions
+    }
+
+    fn filter(token: &&Token) -> bool {
+        !matches!(token, Token::Whitespace(_))
+    }
+}
+```
+### Pipeline
+### Backends
+Die Backends sind dafür verantwortlich, auf Basis der Expressions das entsprechende Backend zu generieren. In unserem Fall handelt es sich um Rust- und C-Dateien, die aus den Expressions erzeugt werden. Die Backends übernehmen dabei die Aufgabe, den erzeugten Code zu transpilieren. Sobald das Backend erstellt wurde, kann der transpilierte/generierte Code kompiliert und ausgeführt werden. In Rust wird dies gemacht mit rustc und in C mit gcc/clang.
+### IR
+Die Intermediäre Repräsentation (IR) stellt den Quellcode in einer vereinfachten und standardisierten Form dar, die unabhängig von einer bestimmten Programmiersprache ist. Sie dient dazu, den Quellcode auf seine Bedeutung hin zu analysieren und zu optimieren, bevor er in Maschinencode umgewandelt wird.
+
+Die Verwendung von IR erleichtert es auch, verschiedene Optimierungstechniken auf den Code anzuwenden, ohne dass dabei die eigentliche Programmiersprache berücksichtigt werden muss. Auf diese Weise kann der Compiler oder das Programmierwerkzeug eine optimierte Version des Codes generieren, die schneller und effizienter ausgeführt werden kann.
+
+### IR Code
+```rust
+pub enum Expression {
+    IncVal(u8),
+    DecVal(u8),
+    IncPtr(usize),
+    DecPtr(usize),
+    MulVal(isize, u8),
+    Clear,
+    Loop(Vec<Expression>),
+    Output,
+    Input,
+}
+```
+
+### IR Erklärung
+Der Code definiert ein öffentliches Enum namens "Expression". Enums sind eine Konstruktion, welche ermöglichen, eine begrenzte Anzahl von möglichen Werten zu definieren. Diese stellen dann ein bestimmtes Konzept dar.
+
+In diesem Fall enthält die "Expression" Enum sieben Varianten:
+
+"IncVal" und "DecVal" haben beide einen Parameter vom Typ "u8". Diese Varianten repräsentieren die Operationen, um den Wert an der aktuellen Speicherposition im Speicher um 1 zu erhöhen oder zu verringern.
+
+"IncPtr" und "DecPtr" haben beide einen Parameter vom Typ "usize". Diese Varianten repräsentieren die Operationen, um den Speicherzeiger um 1 nach rechts oder links zu verschieben.
+
+"MulVal" hat einen Parameter vom Typ "isize" und einen Parameter vom Typ "u8". Diese Variante repräsentiert die Operation, bei der der Wert an der aktuellen Speicherposition im Speicher mit einem gegebenen Wert multipliziert wird.
+
+"Clear" hat keine Parameter und repräsentiert die Operation, um den Wert an der aktuellen Speicherposition im Speicher auf 0 zu setzen.
+
+"Loop" hat einen Parameter vom Typ "Vec<Expression>". Diese Variante repräsentiert eine Schleife, die aus einer Liste von Ausdrücken besteht, die wiederholt ausgeführt werden, solange der Wert an der aktuellen Speicherposition im Speicher ungleich 0 ist.
+
+"Output" und "Input" haben keine Parameter. Diese Varianten repräsentieren die Operationen, um den Wert an der aktuellen Speicherposition im Speicher als ASCII-Zeichen auf der Konsole auszugeben oder ein ASCII-Zeichen von der Konsole einzulesen und an der aktuellen Speicherposition im Speicher zu speichern.
+
+Zusammengefasst definiert dieser Code also enums, die verschiedene Operationen für die Manipulation des Speichers in der Programmiersprache Brainfuck für die Ausführung auf einer Maschine definiert.
+
+### Optimierungen
+Der Optimizer besteht aus drei Optimierungen: Copy, Clear und ConcatOptimizer.
+
+#### ConcatOptimizer
+```rust
+struct ConcatOptimizer;
+
+impl ConcatOptimizer {
+    fn optimize_stage_01(expressions: &[Expression]) -> Vec<Expression> {
+        let mut optimized = vec![];
+        for expression in expressions {
+            match (expression, optimized.last()) {
+                (Expression::IncVal(1), Some(&Expression::IncVal(amount))) => {
+                    replace_last(&mut optimized, Expression::IncVal(amount + 1))
+                }
+                (Expression::DecVal(1), Some(&Expression::DecVal(amount))) => {
+                    replace_last(&mut optimized, Expression::DecVal(amount + 1))
+                }
+                (Expression::IncPtr(1), Some(&Expression::IncPtr(amount))) => {
+                    replace_last(&mut optimized, Expression::IncPtr(amount + 1))
+                }
+                (Expression::DecPtr(1), Some(&Expression::DecPtr(amount))) => {
+                    replace_last(&mut optimized, Expression::DecPtr(amount + 1))
+                }
+                (Expression::Loop(expressions), _) => {
+                    optimized.push(Expression::Loop(Self::optimize_stage_01(expressions)))
+                }
+                (expression, _) => optimized.push(expression.clone()),
+            }
+        }
+        optimized
+    }
+
+    fn optimize_stage_02(expressions: &[Expression]) -> Vec<Expression> {
+        let mut optimized = vec![];
+        for expression in expressions {
+            match (expression, optimized.last()) {
+                (Expression::IncVal(val), Some(&Expression::IncVal(amount))) => {
+                    replace_last(&mut optimized, Expression::IncVal(amount + val))
+                }
+                (Expression::IncVal(val), Some(&Expression::DecVal(amount))) => {
+                    concat_match!(optimized, val, DecVal, &amount, IncVal);
+                }
+                (Expression::DecVal(val), Some(&Expression::DecVal(amount))) => {
+                    replace_last(&mut optimized, Expression::DecVal(amount + val))
+                }
+                (Expression::DecVal(val), Some(&Expression::IncVal(amount))) => {
+                    concat_match!(optimized, val, IncVal, &amount, DecVal);
+                }
+                (Expression::IncPtr(val), Some(&Expression::IncPtr(amount))) => {
+                    replace_last(&mut optimized, Expression::IncPtr(amount + val))
+                }
+                (Expression::IncPtr(val), Some(&Expression::DecPtr(amount))) => {
+                    concat_match!(optimized, val, DecPtr, &amount, IncPtr);
+                }
+                (Expression::DecPtr(val), Some(&Expression::DecPtr(amount))) => {
+                    replace_last(&mut optimized, Expression::DecPtr(amount + val))
+                }
+                (Expression::DecPtr(val), Some(&Expression::IncPtr(amount))) => {
+                    concat_match!(optimized, val, IncPtr, &amount, DecPtr);
+                }
+                (Expression::Loop(expressions), _) => {
+                    let sub_expressions = Self::optimize_stage_02(expressions);
+                    if !sub_expressions.is_empty() {
+                        optimized.push(Expression::Loop(Self::optimize_stage_02(&sub_expressions)))
+                    }
+                }
+                (expression, _) => optimized.push(expression.clone()),
+            }
+        }
+        optimized
+    }
+}
+
+impl Optimizer for ConcatOptimizer {
+    fn optimize(expressions: &[Expression]) -> Vec<Expression> {
+        let expressions = ConcatOptimizer::optimize_stage_01(expressions);
+
+        ConcatOptimizer::optimize_stage_02(&expressions)
+    }
+}
+```
+
+#### ConcatOptimizer Erklärung
+Der ConcatOptimizer enthält zwei Funktionen: optimize_stage_01 und optimize_stage_02, die jeweils ein Vektor von Ausdrücken (Expression) als Eingabe nehmen und einen optimierte Vektor von Ausdrücken zurückgeben.
+
+optimize_stage_01 optimiert die Ausdrücke in Bezug auf die Inkrementierung/Dekrementierung von Werten und Zeigern sowie auf Schleifen. Die Optimierung wird durchgeführt, indem ähnliche aufeinanderfolgende Ausdrücke zusammengefasst werden.
+Beispiel: Wenn der Ausdruck IncVal(1) direkt auf einen IncVal(n) Ausdruck folgt, wird der IncVal(n) Ausdruck durch einen einzigen IncVal(n+1) Ausdruck ersetzt.
+
+optimize_stage_02 führt eine weitere Optimierung der Ausdrücke durch, indem sie ähnliche aufeinanderfolgende Ausdrücke miteinander kombiniert. 
+Beispiel: Wenn der Ausdruck IncVal(n) direkt auf einen DecVal(m) Ausdruck folgt, werden beide Ausdrücke durch einen einzigen Loop(IncVal(n-m)) Ausdruck ersetzt.
+
+Schliesslich implementiert die Struktur die optimize Funktion, die eine Kette von Optimierungen ausführt, indem sie zuerst optimize_stage_01 auf die Eingabe anwendet und dann das Ergebnis an optimize_stage_02 weitergibt.
+
+#### ClearOptimizer
+```rust
+struct ClearOptimizer;
+
+impl Optimizer for ClearOptimizer {
+    fn optimize(expressions: &[Expression]) -> Vec<Expression> {
+        let mut optimized: Vec<Expression> = vec![];
+
+        for expression in expressions {
+            match expression {
+                Expression::Loop(expressions) => match expressions[..] {
+                    [Expression::DecVal(1)] | [Expression::IncVal(1)] => {
+                        optimized.push(Expression::Clear)
+                    }
+                    _ => {
+                        let mut sub_optimized = vec![];
+                        let sub_expressions = ClearOptimizer::optimize(expressions);
+                        sub_optimized.extend(sub_expressions);
+
+                        if !sub_optimized.is_empty() {
+                            optimized.push(Expression::Loop(sub_optimized));
+                        }
+                    }
+                },
+                _ => {
+                    optimized.push(expression.clone());
+                }
+            }
+        }
+        optimized
+    }
+}
+```
+
+Die optimize-Methode nimmt eine Liste von Expression-Werten und gibt eine optimierte Liste von Expression-Werten zurück. Der Optimierer entfernt alle Schleifen, die lediglich aus einer einzigen Inkrementierung oder Dekrementierung des Zellwerts bestehen, und ersetzt sie durch einen einzigen Clear-Befehl.
+
+Die Funktion iteriert durch die gegebene Liste von Expressions und prüft, ob die Expression eine Schleife ist. Ist dies der Fall: es wird überprüft, ob die Schleife aus einer einzigen Inkrementierung oder Dekrementierung besteht. In diesem Fall wird ein Clear-Befehl zur optimierten Liste hinzugefügt. Andernfalls wird die Schleife rekursiv optimiert und zur optimierten Liste hinzugefügt.
+
+Wenn die Expression keine Schleife ist, wird sie unverändert zur optimierten Liste hinzugefügt.
+
+Am Ende gibt die Funktion die optimierte Liste von Expression-Werten zurück.
+
+#### CopyOptimizer
+```rust
+struct CopyOptimizer;
+
+impl Optimizer for CopyOptimizer {
+    fn optimize(expressions: &[Expression]) -> Vec<Expression> {
+        let mut optimized = vec![];
+
+        for expression in expressions {
+            match expression {
+                Expression::Loop(r#loop) => {
+                    let mut loop_optimized = vec![];
+                    let mut context =
+                        CopyOptimizerContext::new(optimized.len().wrapping_sub(1) % usize::MAX);
+                    for expression in r#loop {
+                        match expression {
+                            Expression::Clear => {
+                                loop_optimized.push(expression.clone());
+                                context.set_side_effect(true);
+                            }
+                            Expression::IncVal(val) => {
+                                loop_optimized.push(expression.clone());
+                                context.add_inc_val(*val);
+                            }
+                            Expression::DecVal(val) => {
+                                loop_optimized.push(expression.clone());
+                                context.add_dec_val(*val);
+                            }
+                            Expression::MulVal(_, _) => {
+                                loop_optimized.push(expression.clone());
+                                context.set_side_effect(true);
+                            }
+                            Expression::IncPtr(val) => {
+                                loop_optimized.push(expression.clone());
+                                context.add_inc_ptrs(*val);
+                            }
+                            Expression::DecPtr(val) => {
+                                loop_optimized.push(expression.clone());
+                                context.add_dec_ptrs(*val);
+                            }
+                            Expression::Loop(r#loop) => {
+                                loop_optimized
+                                    .extend(Self::optimize(&[Expression::Loop(r#loop.clone())]));
+                                context.set_side_effect(true);
+                            }
+                            Expression::Output => {
+                                loop_optimized.push(expression.clone());
+                                context.set_side_effect(true);
+                            }
+                            Expression::Input => {
+                                loop_optimized.push(expression.clone());
+                                context.set_side_effect(true);
+                            }
+                        }
+                    }
+
+                    if let Some(expressions) = context.generate_expressions() {
+                        optimized.extend(expressions);
+                    } else {
+                        optimized.push(Expression::Loop(loop_optimized))
+                    }
+                }
+                _ => {
+                    optimized.push(expression.clone());
+                }
+            }
+        }
+
+        optimized
+    }
+}
+```
+
+Die CopyOptimizer-Struktur implementiert die Optimizer-Trait. Die Methode optimize erhält einen Slice von Expression-Instanzen und gibt eine optimierte Version zurück.
+
+Die Optimierung, versucht die aufeinanderfolgenden Operationen, die eine Kopie von Daten ausführen, zusammenzufassen. Die optimierten Ausdrücke werden in einem Vektor namens "optimized" gesammelt.
+
+In der Methode optimize wird für jede Expression in der übergebenen Slice einen Match-Block durchlaufen, um den Expression-Typ zu bestimmen und die Optimierung durchzuführen. Wenn der Expression-Typ eine Schleife ist, wird für jede Expression in der Schleife einen weiteren Match-Block durchlaufen, um zu bestimmen, welche Art von Expression vorliegt. 
+
+Wenn eine Expression vorliegt, die eine Kopie von Daten ausführt, wird ein CopyOptimizerContext erstellt, um Informationen über die Ausführung dieser Expression zu sammeln.
+
+Am Ende der Schleife wird geprüft, ob es sich lohnt, die Operationen zusammenzufassen. Wenn ja, wird eine optimierte Version der aufeinanderfolgenden Operationen erzeugt. Andernfalls wird die Schleife unverändert in die optimierte Version eingefügt.
+
+Der Code ist relativ komplex und erfordert ein gutes Verständnis der Brainfuck-Syntax und der Optimierungstechniken, um vollständig verstanden zu werden.
 
 ## Tests
 
@@ -639,6 +1039,13 @@ Dies machen wir Folgendermassen in der rs Datei:
 Danach bekommen wir unseren erwarteten Output:
 ![](doc/res/Pasted%20image%2020230312145314.png)
 
+### Unit Tests Optimizer
+Um die Funktion der Optimizer zu garantieren, haben wir Unit tests geschrieben.
+
+Die Unit Tests sind alle bestanden. Den Code der Unit Tests kann auf dem VSC eingesehen werden.
+![](doc/res/Pasted%20image%2020230312152933.png)
+
+
 # Abschlussbericht
 
 ## Erreichte Ziele
@@ -664,6 +1071,12 @@ Zusammenfassend war dies ein erfolgreiches Projekt, das uns viel Wissen und Erfa
 Das erfolgreiche Abschliessen dieses Projekts gibt uns die Möglichkeit, uns auf zukünftige Projekte zu freuen und zu planen. Wir haben in diesem Projekt viel gelernt und sind sicher, dass dieses Wissen uns bei zukünftigen Herausforderungen helfen wird. Wir planen, das Wissen und die Erfahrung, die wir in diesem Projekt gewonnen haben, in unseren zukünftigen Projekten anzuwenden und weiterzuentwickeln.
 
 Wir werden auch weiterhin daran arbeiten, unsere Fähigkeiten zu verbessern und uns auf unsere individuellen Interessen und Stärken zu konzentrieren. Wir sind dankbar für die Chance, an diesem Projekt teilgenommen zu haben und freuen uns darauf, unser Wissen in zukünftigen Projekten anzuwenden. Besonders in der Programmiersprache Java erwarten wir weitere Projekte und sind mit diesen Erfahrungen im gepäck nun besser vorbereitet.
+
+Ein Ausblick auf dieses Projekt spezifisch: wir können die Fehlermeldung von der Rust Runtime vorbeugen.
+Weiter sehen wir grosses Potential in der vereinfachung und Automatisierung der Pipeline: 
+- Input zur Pipeline autimatisieren
+- File Outputstream vordefinieren
+- Ganzer Pipeline Ablauf mit so wenig Interaktion wir möglich gestalten
 
 ## Schlusswort
 
