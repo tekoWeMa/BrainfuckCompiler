@@ -2,7 +2,7 @@
 
 ## L-TIN-21-T-a
 
-### Brainfuck Compiler
+### Projektarbeit: Brainfuck Compiler
 
 ![](doc/res/Pasted%20image%2020230312164045.png)
 
