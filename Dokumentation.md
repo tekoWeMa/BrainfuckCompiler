@@ -4,7 +4,7 @@
 
 ### Brainfuck Compiler
 
-TODO: Bild einfügen
+![](doc/res/Pasted%20image%2020230312164045.png)
 
 Projektleiter: Mario Weilenmann, Marvin Huber
 
