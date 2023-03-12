@@ -1,4 +1,5 @@
 # Teko schweizerische Fachhochschule
+
 ## L-TIN-21-T-a
 
 ### Brainfuck Compiler
@@ -10,7 +11,6 @@ Projektleiter: Mario Weilenmann, Marvin Huber
 Dozent: Iwan Müeller
 
 Datum: 18.03.2023
-
 
 # Management Summary
 
@@ -82,6 +82,24 @@ Insgesamt haben wir wertvolle Erfahrungen gesammelt und unsere Programmierkenntn
     - [Klasse `BracketPair`](#klasse-bracketpair)
     - [Enumeration `OpcodeEnum`](#enumeration-opcodeenum)
 - [Tests und implementation marvin](#tests-und-implementation-marvin)
+  - [Implementation](#implementation)
+  - [Tests](#tests)
+    - [Rust Installation](#rust-installation)
+    - [Testcases](#testcases)
+    - [TestFile 1: Hello World](#testfile-1-hello-world)
+      - [Input Online Compiler](#input-online-compiler)
+      - [Output online Compiler](#output-online-compiler)
+      - [Output Java](#output-java)
+      - [Output Rust](#output-rust)
+    - [TestFile 2: bfeer](#testfile-2-bfeer)
+      - [Input: ganzer Input in bfeerInput](#input-ganzer-input-in-bfeerinput)
+      - [Output Online Compiler](#output-online-compiler-1)
+      - [Output Java](#output-java-1)
+      - [Output Rust](#output-rust-1)
+    - [TestFile 3: Mandelbrot](#testfile-3-mandelbrot)
+      - [Output Online](#output-online)
+      - [Output Java](#output-java-2)
+      - [Output Rust](#output-rust-2)
 - [Abschlussbericht](#abschlussbericht)
   - [Erreichte Ziele](#erreichte-ziele)
   - [Schwierigkeiten](#schwierigkeiten)
@@ -91,6 +109,7 @@ Insgesamt haben wir wertvolle Erfahrungen gesammelt und unsere Programmierkenntn
   - [Ausblick](#ausblick)
   - [Schlusswort](#schlusswort)
 - [Anhang](#anhang)
+  - [TestFiles](#testfiles)
 
 # Vorwort
 
@@ -533,6 +552,93 @@ Dies ist eine Enumeration, die die acht Opcodes des Brainfuck-Codes definiert. S
 
 # Tests und implementation marvin
 
+## Implementation
+
+## Tests
+
+Um die Implementationen zu Testen, werden wir unsere Ausgaben mit den Ausgaben des Online Brainfuck compilers vergleichen: <https://copy.sh/brainfuck/>
+
+### Rust Installation
+
+Um Rust auf einem Windows computer auszuführen, müssen wir zuerst einen Rust-compiler installieren.
+Dafür navigieren wir auf rustup.rs.
+
+Dann laden wir die Datei herunter für unser Betriebssystem.
+
+![](doc/res/Pasted%20image%2020230312133832.png)
+
+Als nächstes bestätigen wir die Installation von Rust.
+
+![](doc/res/Pasted%20image%2020230312133853.png)
+
+Damit ist die Installation abgeschlossen und wir starten die shell neu.
+Danach können wir mit den ersten Tests beginnen.
+
+### Testcases
+
+Wir werden 3 Files testen und die Ausgaben vom online-compiler, des Java-Compilers und des Rust-Compilers vergleichen um sicherzustellen, dass unsere Implementationen korrekt sind.
+
+### TestFile 1: Hello World
+
+#### Input Online Compiler
+
+![](doc/res/Pasted%20image%2020230312135259.png)
+
+#### Output online Compiler
+
+![](doc/res/Pasted%20image%2020230312135333.png)
+
+#### Output Java
+
+![](doc/res/Pasted%20image%2020230312143459.png)
+
+#### Output Rust
+
+![](doc/res/Pasted%20image%2020230312143742.png)
+
+### TestFile 2: bfeer
+
+#### Input: ganzer Input in [bfeerInput](TestResults/bfeerInput.md)
+
+#### Output Online Compiler
+
+Ganzer Output in [bfeer](TestResults/bfeer.md)
+![](doc/res/Pasted%20image%2020230312135454.png)
+
+#### Output Java
+
+Ganzer Output Java in [bfeer](TestResults/bfeer.md)
+![](doc/res/Pasted%20image%2020230312141846.png)
+
+#### Output Rust
+
+Ganzer Output Rust in [bfeer](TestResults/bfeer.md)
+![](doc/res/Pasted%20image%2020230312143105.png)
+
+### TestFile 3: Mandelbrot
+
+#### Output Online
+
+Ganzer Output Online in [Mandelbrot](TestResults/Mandelbrot.md)
+![](doc/res/Pasted%20image%2020230312144417.png)
+
+#### Output Java
+
+Ganzer Output Java in [Mandelbrot](TestResults/Mandelbrot.md)
+![](doc/res/Pasted%20image%2020230312144439.png)
+
+#### Output Rust
+
+Ganzer Output Rust in [Mandelbrot](TestResults/Mandelbrot.md)
+![](doc/res/Pasted%20image%2020230312144358.png)
+Wir kriegen eine Fehlermeldung beim ersten Ausführen der bf- Datei.
+Dies ist der fall, weil wir beim Optimizer nicht berücksichtigen, dass der Index negativ werden kann. Wir brauchen in diesem Fall einen höheren Offset als 0.
+
+Dies machen wir Folgendermassen in der rs Datei:
+![](doc/res/Pasted%20image%2020230312144907.png)
+Danach bekommen wir unseren erwarteten Output:
+![](doc/res/Pasted%20image%2020230312145314.png)
+
 # Abschlussbericht
 
 ## Erreichte Ziele
@@ -569,7 +675,10 @@ Abschliessend möchten wir sagen, dass wir uns auf zukünftige Projekte freuen u
 
 # Anhang
 
+Orientation Dokumentation Tinkerforge HAT: <https://www.tinkerforge.com/en/>
 
-Orientation Dokumentation Tinkerforge HAT: https://www.tinkerforge.com/en/
-
-
+## TestFiles
+[bfeer](TestResults/bfeer.md)
+[bfeerInput](TestResults/bfeerInput.md)
+[Mandelbrot](TestResults/Mandelbrot.md)
+[MandelbrotInput](TestResults/MandelbrotInput.md)
